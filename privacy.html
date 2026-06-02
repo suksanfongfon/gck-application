@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>นโยบายความเป็นส่วนตัว — GCK Application</title>
+    <meta
+      name="description"
+      content="นโยบายความเป็นส่วนตัวของส่วนขยาย Chrome — เราเก็บข้อมูลอะไรบ้าง และใช้เพื่ออะไร"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- ============ Header ============ -->
+    <header class="site-header">
+      <div class="container nav">
+        <a href="index.html" class="logo">
+          <span class="logo-mark">G</span>
+          GCK Application
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html">หน้าแรก</a></li>
+          <li><a href="index.html#extensions">ส่วนขยาย</a></li>
+          <li><a href="usage.html">วิธีใช้งาน</a></li>
+          <li><a href="faq.html">คำถามที่พบบ่อย</a></li>
+          <li><a href="privacy.html">ความเป็นส่วนตัว</a></li>
+          <li>
+            <a href="index.html#extensions" class="btn btn-primary" style="padding: 8px 18px"
+              >ดูส่วนขยาย</a
+            >
+          </li>
+        </ul>
+        <button class="nav-toggle" aria-label="เปิดเมนู">☰</button>
+      </div>
+    </header>
+
+    <!-- ============ Page hero ============ -->
+    <section class="page-hero">
+      <div class="container">
+        <h1>นโยบายความเป็นส่วนตัว</h1>
+        <p>ปรับปรุงล่าสุด: <span data-year>2026</span></p>
+      </div>
+    </section>
+
+    <!-- ============ Content ============ -->
+    <article class="prose">
+      <div class="callout">
+        ⚠️ หมายเหตุ: นี่คือ <strong>ตัวอย่าง (template)</strong>
+        กรุณาแก้ไขเนื้อหาให้ตรงกับข้อมูลจริงที่ส่วนขยายของคุณเก็บและใช้งาน
+        และควรปรึกษาผู้เชี่ยวชาญด้านกฎหมายหากจำเป็น
+        Chrome Web Store กำหนดให้ส่วนขยายต้องมีหน้านโยบายนี้
+      </div>
+
+      <p>
+        ส่วนขยาย “GCK Application” (“เรา”) ให้ความสำคัญกับความเป็นส่วนตัวของผู้ใช้
+        เอกสารนี้อธิบายว่าเราเก็บข้อมูลใดบ้าง ใช้ข้อมูลอย่างไร และคุณมีสิทธิอะไรบ้าง
+      </p>
+
+      <h2>1. ข้อมูลที่เราเก็บรวบรวม</h2>
+      <p>
+        ส่วนขยายนี้ออกแบบมาให้ทำงานในเครื่องของคุณเป็นหลัก โดยทั่วไปเรา
+        <strong>ไม่เก็บข้อมูลส่วนบุคคล</strong> ที่ระบุตัวตนได้ ทั้งนี้:
+      </p>
+      <ul>
+        <li>
+          <strong>ข้อมูลที่จัดเก็บในเครื่อง:</strong> การตั้งค่าและความชอบของคุณ
+          ถูกบันทึกไว้ในที่จัดเก็บของเบราว์เซอร์ (Chrome Storage) เท่านั้น
+          และไม่ถูกส่งออกไปยังเซิร์ฟเวอร์ภายนอก
+        </li>
+        <li>
+          <strong>ข้อมูลที่คุณป้อนเอง:</strong> หากมีฟีเจอร์ที่ต้องให้คุณกรอกข้อมูล
+          ข้อมูลนั้นจะถูกใช้เพื่อให้ฟีเจอร์ทำงานเท่านั้น
+        </li>
+      </ul>
+
+      <h2>2. สิทธิ์การเข้าถึง (Permissions)</h2>
+      <p>
+        ส่วนขยายอาจขอสิทธิ์บางอย่างเพื่อให้ทำงานได้
+        เราขอเฉพาะสิทธิ์ที่จำเป็นต่อการทำงานเท่านั้น เช่น:
+      </p>
+      <ul>
+        <li>
+          <code>storage</code> — เพื่อบันทึกการตั้งค่าของคุณในเครื่อง
+        </li>
+        <li>
+          <code>activeTab</code> — เพื่อทำงานกับแท็บที่คุณกำลังเปิดใช้งานอยู่
+        </li>
+        <li>
+          (แก้ไขรายการนี้ให้ตรงกับ <code>manifest.json</code> ของคุณ)
+        </li>
+      </ul>
+
+      <h2>3. การใช้และการแบ่งปันข้อมูล</h2>
+      <p>
+        เรา <strong>ไม่ขาย ไม่เช่า และไม่แบ่งปัน</strong> ข้อมูลของคุณให้บุคคลที่สาม
+        เพื่อวัตถุประสงค์ทางการตลาด หากมีการใช้บริการภายนอก (เช่น บริการวิเคราะห์)
+        เราจะระบุไว้อย่างชัดเจนในส่วนนี้
+      </p>
+
+      <h2>4. ความปลอดภัยของข้อมูล</h2>
+      <p>
+        เราใช้มาตรการที่เหมาะสมในการปกป้องข้อมูลของคุณ
+        อย่างไรก็ตาม เนื่องจากข้อมูลส่วนใหญ่ถูกเก็บในเครื่องของคุณเอง
+        ความปลอดภัยจึงขึ้นอยู่กับการรักษาความปลอดภัยของอุปกรณ์ของคุณด้วย
+      </p>
+
+      <h2>5. สิทธิของผู้ใช้</h2>
+      <p>คุณสามารถ:</p>
+      <ul>
+        <li>ลบข้อมูลการตั้งค่าได้โดยการถอนการติดตั้งส่วนขยาย</li>
+        <li>ล้างข้อมูลที่จัดเก็บได้ผ่านการตั้งค่าของเบราว์เซอร์</li>
+        <li>ติดต่อเราเพื่อสอบถามเกี่ยวกับข้อมูลของคุณ</li>
+      </ul>
+
+      <h2>6. การเปลี่ยนแปลงนโยบาย</h2>
+      <p>
+        เราอาจปรับปรุงนโยบายนี้เป็นครั้งคราว
+        การเปลี่ยนแปลงจะมีผลเมื่อเผยแพร่บนหน้านี้
+        โปรดตรวจสอบวันที่ “ปรับปรุงล่าสุด” ด้านบน
+      </p>
+
+      <h2>7. ติดต่อเรา</h2>
+      <p>
+        หากมีคำถามเกี่ยวกับนโยบายความเป็นส่วนตัว ติดต่อได้ที่
+        <a href="mailto:you@example.com">you@example.com</a>
+      </p>
+    </article>
+
+    <!-- ============ Footer ============ -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="logo">
+              <span class="logo-mark">G</span> GCK Application
+            </div>
+            <p>
+              ศูนย์รวมส่วนขยาย Chrome ภาษาไทยจาก GCK
+              ที่ช่วยให้การทำงานบนเว็บของคุณง่ายและรวดเร็วยิ่งขึ้น
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>เมนู</h4>
+            <ul>
+              <li><a href="index.html">หน้าแรก</a></li>
+              <li><a href="usage.html">วิธีใช้งาน</a></li>
+              <li><a href="faq.html">คำถามที่พบบ่อย</a></li>
+              <li><a href="privacy.html">นโยบายความเป็นส่วนตัว</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>ติดต่อ</h4>
+            <ul>
+              <li><a href="mailto:you@example.com">อีเมลซัพพอร์ต</a></li>
+              <li><a href="#">Chrome Web Store</a></li>
+              <li><a href="#">GitHub</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          © <span data-year>2026</span> GCK Application • สงวนลิขสิทธิ์
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
