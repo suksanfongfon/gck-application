@@ -6,7 +6,7 @@
     <title>นโยบายความเป็นส่วนตัว — GCK Application</title>
     <meta
       name="description"
-      content="นโยบายความเป็นส่วนตัวของส่วนขยาย Chrome — เราเก็บข้อมูลอะไรบ้าง และใช้เพื่ออะไร"
+      content="นโยบายความเป็นส่วนตัวของส่วนขยาย Chrome ทุกตัวภายใต้ GCK Application — ข้อมูลที่เก็บ การใช้งาน และสิทธิ์ของผู้ใช้"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -44,92 +44,260 @@
     <section class="page-hero">
       <div class="container">
         <h1>นโยบายความเป็นส่วนตัว</h1>
-        <p>ปรับปรุงล่าสุด: <span data-year>2026</span></p>
+        <p>ปรับปรุงล่าสุด: 2 มิถุนายน <span data-year>2026</span></p>
       </div>
     </section>
 
     <!-- ============ Content ============ -->
     <article class="prose">
-      <div class="callout">
-        ⚠️ หมายเหตุ: นี่คือ <strong>ตัวอย่าง (template)</strong>
-        กรุณาแก้ไขเนื้อหาให้ตรงกับข้อมูลจริงที่ส่วนขยายของคุณเก็บและใช้งาน
-        และควรปรึกษาผู้เชี่ยวชาญด้านกฎหมายหากจำเป็น
-        Chrome Web Store กำหนดให้ส่วนขยายต้องมีหน้านโยบายนี้
+
+      <p>
+        นโยบายความเป็นส่วนตัวฉบับนี้ครอบคลุมส่วนขยาย Chrome
+        <strong>ทุกตัว</strong>ที่พัฒนาและเผยแพร่ภายใต้ชื่อ
+        <strong>GCK Application</strong> ได้แก่
+        <strong>X Toolkit</strong>, <strong>Lazada Product Finder</strong>
+        และส่วนขยายอื่น ๆ ที่จะเพิ่มในอนาคต (เรียกรวมว่า "ส่วนขยาย")
+      </p>
+
+      <p>
+        เราให้ความสำคัญกับความเป็นส่วนตัวของผู้ใช้เป็นอย่างสูง
+        นโยบายนี้อธิบายอย่างชัดเจนว่าเราเก็บข้อมูลใดบ้าง
+        ใช้อย่างไร และคุณมีสิทธิ์อะไร
+      </p>
+
+      <!-- 1 -->
+      <h2>1. หลักการทั่วไป</h2>
+      <p>ส่วนขยายทุกตัวของ GCK Application ยึดหลักการดังนี้</p>
+      <ul>
+        <li>ทำงานในเครื่องของผู้ใช้ (locally) เป็นหลัก</li>
+        <li>ไม่เก็บ ไม่ส่ง และไม่ขายข้อมูลส่วนบุคคลให้บุคคลที่สาม</li>
+        <li>ไม่ใช้ข้อมูลเพื่อโฆษณาหรือวิเคราะห์พฤติกรรมผู้ใช้</li>
+        <li>ขอสิทธิ์เฉพาะที่จำเป็นต่อการทำงานของฟีเจอร์จริงเท่านั้น</li>
+        <li>ไม่ใช้ Remote Code — ทุก script เป็นไฟล์ local ใน package</li>
+      </ul>
+
+      <!-- 2 -->
+      <h2>2. ข้อมูลที่เก็บรวบรวม</h2>
+
+      <h3>2.1 ข้อมูลที่เก็บในเครื่องผู้ใช้ (Local Storage)</h3>
+      <p>
+        ส่วนขยายทุกตัวใช้ <code>chrome.storage.local</code>
+        เพื่อบันทึกข้อมูลต่อไปนี้ <strong>ในเครื่องของผู้ใช้เท่านั้น</strong>:
+      </p>
+      <ul>
+        <li>การตั้งค่าที่ผู้ใช้กำหนดเอง เช่น ความถี่ ลิมิต ตัวกรอง</li>
+        <li>ตัวนับการทำงาน (rate limit counter) สำหรับคำนวณช่วงพัก</li>
+        <li>Whitelist หรือรายการที่ผู้ใช้กรอกเอง</li>
+        <li>การตั้งค่า API key / affiliate config ที่ผู้ใช้กรอกเอง</li>
+      </ul>
+      <p>
+        ข้อมูลทั้งหมดนี้ <strong>ไม่ถูกส่งออกสู่เซิร์ฟเวอร์ใด ๆ</strong>
+        และจะถูกลบทิ้งเมื่อผู้ใช้ถอนการติดตั้งส่วนขยาย
+      </p>
+
+      <h3>2.2 ข้อมูลที่ส่วนขยายไม่เก็บ</h3>
+      <ul>
+        <li>ชื่อ อีเมล หรือข้อมูลบัญชีผู้ใช้</li>
+        <li>ประวัติการเข้าชมเว็บไซต์</li>
+        <li>เนื้อหาของโพสต์หรือข้อความส่วนตัว</li>
+        <li>ข้อมูลตำแหน่งที่ตั้ง</li>
+        <li>ข้อมูลการชำระเงินหรือบัตรเครดิต</li>
+      </ul>
+
+      <!-- 3 -->
+      <h2>3. สิทธิ์การเข้าถึงและเหตุผล</h2>
+      <p>
+        ด้านล่างนี้คือสิทธิ์ที่ส่วนขยายแต่ละตัวใช้
+        พร้อมเหตุผลที่จำเป็นต้องใช้สิทธิ์นั้น
+      </p>
+
+      <h3>🔧 X Toolkit</h3>
+      <div style="overflow-x:auto">
+        <table style="width:100%;border-collapse:collapse;font-size:0.95rem">
+          <thead>
+            <tr style="background:var(--bg-soft)">
+              <th style="padding:10px 14px;text-align:right;border:1px solid var(--border);font-weight:600">สิทธิ์</th>
+              <th style="padding:10px 14px;text-align:right;border:1px solid var(--border);font-weight:600">เหตุผลที่ใช้</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding:10px 14px;border:1px solid var(--border)"><code>storage</code></td>
+              <td style="padding:10px 14px;border:1px solid var(--border)">บันทึกการตั้งค่า (ความถี่ ลิมิต whitelist affiliate config) ในเครื่องผู้ใช้</td>
+            </tr>
+            <tr style="background:var(--bg-soft)">
+              <td style="padding:10px 14px;border:1px solid var(--border)"><code>activeTab</code></td>
+              <td style="padding:10px 14px;border:1px solid var(--border)">อ่านและโต้ตอบกับแท็บ X (Twitter) ที่ผู้ใช้กำลังเปิดอยู่</td>
+            </tr>
+            <tr>
+              <td style="padding:10px 14px;border:1px solid var(--border)"><code>scripting</code></td>
+              <td style="padding:10px 14px;border:1px solid var(--border)">inject content script ในหน้า X เพื่อคลิกปุ่ม follow/unfollow/repost ตามคำสั่งผู้ใช้</td>
+            </tr>
+            <tr style="background:var(--bg-soft)">
+              <td style="padding:10px 14px;border:1px solid var(--border)"><code>tabs</code></td>
+              <td style="padding:10px 14px;border:1px solid var(--border)">เปิดโปรไฟล์ X ในแท็บซ่อนเพื่อเช็คผู้ติดตาม แท็บถูกปิดทันทีหลังเช็คเสร็จ</td>
+            </tr>
+            <tr>
+              <td style="padding:10px 14px;border:1px solid var(--border)"><code>x.com / twitter.com</code></td>
+              <td style="padding:10px 14px;border:1px solid var(--border)">เรียกใช้ฟังก์ชัน follow/unfollow/repost/delete บนแพลตฟอร์ม X</td>
+            </tr>
+            <tr style="background:var(--bg-soft)">
+              <td style="padding:10px 14px;border:1px solid var(--border)"><code>api.lazada.*</code></td>
+              <td style="padding:10px 14px;border:1px solid var(--border)">เรียก Lazada API เพื่อค้นหาสินค้าและสร้าง affiliate link ตามการตั้งค่าของผู้ใช้ (โหมด Lazada เท่านั้น)</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
+      <h3 style="margin-top:28px">🛒 Lazada Product Finder</h3>
+      <div style="overflow-x:auto">
+        <table style="width:100%;border-collapse:collapse;font-size:0.95rem">
+          <thead>
+            <tr style="background:var(--bg-soft)">
+              <th style="padding:10px 14px;text-align:right;border:1px solid var(--border);font-weight:600">สิทธิ์</th>
+              <th style="padding:10px 14px;text-align:right;border:1px solid var(--border);font-weight:600">เหตุผลที่ใช้</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding:10px 14px;border:1px solid var(--border)"><code>storage</code></td>
+              <td style="padding:10px 14px;border:1px solid var(--border)">บันทึกการตั้งค่า (เงื่อนไขกรอง คอลัมน์ affiliate config) ในเครื่องผู้ใช้</td>
+            </tr>
+            <tr style="background:var(--bg-soft)">
+              <td style="padding:10px 14px;border:1px solid var(--border)"><code>activeTab</code></td>
+              <td style="padding:10px 14px;border:1px solid var(--border)">อ่านข้อมูลสินค้าจากหน้า Lazada ที่ผู้ใช้เปิดอยู่ (scrape หน้านี้)</td>
+            </tr>
+            <tr>
+              <td style="padding:10px 14px;border:1px solid var(--border)"><code>scripting</code></td>
+              <td style="padding:10px 14px;border:1px solid var(--border)">inject content script ในหน้า Lazada เพื่อดึงข้อมูลสินค้า</td>
+            </tr>
+            <tr style="background:var(--bg-soft)">
+              <td style="padding:10px 14px;border:1px solid var(--border)"><code>tabs</code></td>
+              <td style="padding:10px 14px;border:1px solid var(--border)">เปิดหน้าค้นหา Lazada อัตโนมัติเพื่อดึงผลลัพธ์ตาม keyword ที่ผู้ใช้กรอก</td>
+            </tr>
+            <tr>
+              <td style="padding:10px 14px;border:1px solid var(--border)"><code>clipboardWrite</code></td>
+              <td style="padding:10px 14px;border:1px solid var(--border)">คัดลอกผลลัพธ์เป็น TSV เมื่อผู้ใช้กดปุ่ม "คัดลอก" เท่านั้น</td>
+            </tr>
+            <tr style="background:var(--bg-soft)">
+              <td style="padding:10px 14px;border:1px solid var(--border)"><code>downloads</code></td>
+              <td style="padding:10px 14px;border:1px solid var(--border)">บันทึกไฟล์ CSV เมื่อผู้ใช้กดปุ่ม "ดาวน์โหลด CSV" เท่านั้น</td>
+            </tr>
+            <tr>
+              <td style="padding:10px 14px;border:1px solid var(--border)"><code>lazada.co.th</code></td>
+              <td style="padding:10px 14px;border:1px solid var(--border)">ค้นหาและดึงข้อมูลสินค้าจาก Lazada Thailand ตาม keyword ของผู้ใช้</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 4 -->
+      <h2>4. Remote Code</h2>
       <p>
-        ส่วนขยาย “GCK Application” (“เรา”) ให้ความสำคัญกับความเป็นส่วนตัวของผู้ใช้
-        เอกสารนี้อธิบายว่าเราเก็บข้อมูลใดบ้าง ใช้ข้อมูลอย่างไร และคุณมีสิทธิอะไรบ้าง
+        ส่วนขยายทุกตัวของ GCK Application
+        <strong>ไม่ใช้ Remote Code</strong> ในทุกกรณี
+        ทุก script (<code>content.js</code>, <code>background.js</code>,
+        <code>popup.js</code>) เป็นไฟล์ local ที่บรรจุอยู่ใน extension
+        package เท่านั้น ไม่มีการโหลด script จาก URL ภายนอก
+        ไม่มีการใช้ <code>eval()</code> หรือเทียบเท่า
       </p>
 
-      <h2>1. ข้อมูลที่เราเก็บรวบรวม</h2>
+      <!-- 5 -->
+      <h2>5. การส่งข้อมูลออกภายนอก</h2>
       <p>
-        ส่วนขยายนี้ออกแบบมาให้ทำงานในเครื่องของคุณเป็นหลัก โดยทั่วไปเรา
-        <strong>ไม่เก็บข้อมูลส่วนบุคคล</strong> ที่ระบุตัวตนได้ ทั้งนี้:
+        ส่วนขยายส่งข้อมูลออกสู่เซิร์ฟเวอร์ภายนอกเฉพาะเมื่อผู้ใช้
+        <strong>เริ่มต้นการกระทำนั้นเองโดยตรง</strong> เช่น:
       </p>
       <ul>
         <li>
-          <strong>ข้อมูลที่จัดเก็บในเครื่อง:</strong> การตั้งค่าและความชอบของคุณ
-          ถูกบันทึกไว้ในที่จัดเก็บของเบราว์เซอร์ (Chrome Storage) เท่านั้น
-          และไม่ถูกส่งออกไปยังเซิร์ฟเวอร์ภายนอก
+          <strong>X Toolkit:</strong> ส่ง request ไปยัง x.com / twitter.com
+          เมื่อผู้ใช้กด Start เพื่อ follow/unfollow/repost ตามปกติของแพลตฟอร์ม
+          และส่ง request ไปยัง Lazada API เฉพาะเมื่อผู้ใช้เปิดโหมด Lazada
+          และกรอก API key ของตัวเอง
         </li>
         <li>
-          <strong>ข้อมูลที่คุณป้อนเอง:</strong> หากมีฟีเจอร์ที่ต้องให้คุณกรอกข้อมูล
-          ข้อมูลนั้นจะถูกใช้เพื่อให้ฟีเจอร์ทำงานเท่านั้น
+          <strong>Lazada Product Finder:</strong> เปิดหน้า lazada.co.th
+          ตาม keyword ที่ผู้ใช้กรอก เพื่อดึงข้อมูลสินค้าที่เป็นสาธารณะ
         </li>
       </ul>
-
-      <h2>2. สิทธิ์การเข้าถึง (Permissions)</h2>
       <p>
-        ส่วนขยายอาจขอสิทธิ์บางอย่างเพื่อให้ทำงานได้
-        เราขอเฉพาะสิทธิ์ที่จำเป็นต่อการทำงานเท่านั้น เช่น:
-      </p>
-      <ul>
-        <li>
-          <code>storage</code> — เพื่อบันทึกการตั้งค่าของคุณในเครื่อง
-        </li>
-        <li>
-          <code>activeTab</code> — เพื่อทำงานกับแท็บที่คุณกำลังเปิดใช้งานอยู่
-        </li>
-        <li>
-          (แก้ไขรายการนี้ให้ตรงกับ <code>manifest.json</code> ของคุณ)
-        </li>
-      </ul>
-
-      <h2>3. การใช้และการแบ่งปันข้อมูล</h2>
-      <p>
-        เรา <strong>ไม่ขาย ไม่เช่า และไม่แบ่งปัน</strong> ข้อมูลของคุณให้บุคคลที่สาม
-        เพื่อวัตถุประสงค์ทางการตลาด หากมีการใช้บริการภายนอก (เช่น บริการวิเคราะห์)
-        เราจะระบุไว้อย่างชัดเจนในส่วนนี้
+        <strong>เราไม่ส่งข้อมูลใด ๆ ไปยังเซิร์ฟเวอร์ของ GCK Application</strong>
+        เราไม่มีเซิร์ฟเวอร์ backend สำหรับเก็บข้อมูลผู้ใช้
       </p>
 
-      <h2>4. ความปลอดภัยของข้อมูล</h2>
+      <!-- 6 -->
+      <h2>6. การแบ่งปันข้อมูลกับบุคคลที่สาม</h2>
       <p>
-        เราใช้มาตรการที่เหมาะสมในการปกป้องข้อมูลของคุณ
-        อย่างไรก็ตาม เนื่องจากข้อมูลส่วนใหญ่ถูกเก็บในเครื่องของคุณเอง
-        ความปลอดภัยจึงขึ้นอยู่กับการรักษาความปลอดภัยของอุปกรณ์ของคุณด้วย
+        เราไม่ขาย ไม่เช่า และไม่แบ่งปันข้อมูลของผู้ใช้
+        ให้กับบุคคลที่สามในทุกกรณี
+        ส่วนขยายไม่ฝัง SDK วิเคราะห์ข้อมูล (analytics) หรือโฆษณาใด ๆ
       </p>
 
-      <h2>5. สิทธิของผู้ใช้</h2>
+      <!-- 7 -->
+      <h2>7. ความปลอดภัยของข้อมูล</h2>
+      <p>
+        ข้อมูลทั้งหมดที่บันทึกในเครื่องถูกจัดเก็บผ่าน
+        <code>chrome.storage.local</code> ซึ่งได้รับการปกป้องโดย
+        sandbox ของ Chrome และระบบปฏิบัติการ
+        ความปลอดภัยของข้อมูล API key ที่ผู้ใช้กรอกเองขึ้นอยู่กับ
+        การรักษาความปลอดภัยของอุปกรณ์ของผู้ใช้ด้วย
+      </p>
+
+      <!-- 8 -->
+      <h2>8. สิทธิ์ของผู้ใช้</h2>
       <p>คุณสามารถ:</p>
       <ul>
-        <li>ลบข้อมูลการตั้งค่าได้โดยการถอนการติดตั้งส่วนขยาย</li>
-        <li>ล้างข้อมูลที่จัดเก็บได้ผ่านการตั้งค่าของเบราว์เซอร์</li>
-        <li>ติดต่อเราเพื่อสอบถามเกี่ยวกับข้อมูลของคุณ</li>
+        <li>
+          <strong>ลบข้อมูลทั้งหมด</strong> — ถอนการติดตั้งส่วนขยาย
+          Chrome จะลบข้อมูลใน <code>chrome.storage.local</code> ให้อัตโนมัติ
+        </li>
+        <li>
+          <strong>ล้างข้อมูลเฉพาะส่วน</strong> — ไปที่
+          <code>chrome://extensions</code> → คลิกรายละเอียดส่วนขยาย →
+          กด "ล้างข้อมูล"
+        </li>
+        <li>
+          <strong>ตรวจสอบข้อมูล</strong> — เปิด DevTools → Application →
+          Storage → Extension Storage เพื่อดูข้อมูลที่บันทึกไว้
+        </li>
+        <li>
+          <strong>ติดต่อเรา</strong> — หากมีคำถามหรือต้องการความช่วยเหลือ
+          ส่งอีเมลมาที่
+          <a href="mailto:suksan.cmu@gmail.com">suksan.cmu@gmail.com</a>
+        </li>
       </ul>
 
-      <h2>6. การเปลี่ยนแปลงนโยบาย</h2>
+      <!-- 9 -->
+      <h2>9. ผู้เยาว์</h2>
       <p>
-        เราอาจปรับปรุงนโยบายนี้เป็นครั้งคราว
-        การเปลี่ยนแปลงจะมีผลเมื่อเผยแพร่บนหน้านี้
-        โปรดตรวจสอบวันที่ “ปรับปรุงล่าสุด” ด้านบน
+        ส่วนขยายของเราไม่ได้ออกแบบมาสำหรับผู้ที่มีอายุต่ำกว่า 13 ปี
+        เราไม่ทราบและไม่ประสงค์จะเก็บข้อมูลจากผู้เยาว์โดยเจตนา
       </p>
 
-      <h2>7. ติดต่อเรา</h2>
+      <!-- 10 -->
+      <h2>10. การเปลี่ยนแปลงนโยบาย</h2>
       <p>
-        หากมีคำถามเกี่ยวกับนโยบายความเป็นส่วนตัว ติดต่อได้ที่
-        <a href="mailto:you@example.com">you@example.com</a>
+        เราอาจปรับปรุงนโยบายนี้เมื่อมีการเพิ่มส่วนขยายใหม่หรือเปลี่ยนแปลงฟีเจอร์
+        การเปลี่ยนแปลงจะมีผลเมื่อเผยแพร่บนหน้านี้
+        โปรดตรวจสอบวันที่ "ปรับปรุงล่าสุด" ด้านบนเป็นประจำ
       </p>
+
+      <!-- 11 -->
+      <h2>11. ติดต่อเรา</h2>
+      <p>
+        หากมีคำถามเกี่ยวกับนโยบายความเป็นส่วนตัวหรือการใช้งานข้อมูล
+        ติดต่อได้ที่
+      </p>
+      <ul>
+        <li>อีเมล: <a href="mailto:suksan.cmu@gmail.com">suksan.cmu@gmail.com</a></li>
+        <li>เว็บไซต์: <a href="https://suksanfongfon.github.io/gck-application/">suksanfongfon.github.io/gck-application</a></li>
+      </ul>
+
+      <div class="callout" style="margin-top: 36px">
+        นโยบายนี้เขียนในภาษาไทยเพื่อผู้ใช้งานชาวไทย
+        หากมีข้อขัดแย้งระหว่างเวอร์ชันภาษาต่าง ๆ ให้ยึดเวอร์ชันภาษาไทยเป็นหลัก
+      </div>
+
     </article>
 
     <!-- ============ Footer ============ -->
@@ -149,6 +317,7 @@
             <h4>เมนู</h4>
             <ul>
               <li><a href="index.html">หน้าแรก</a></li>
+              <li><a href="index.html#extensions">ส่วนขยาย</a></li>
               <li><a href="usage.html">วิธีใช้งาน</a></li>
               <li><a href="faq.html">คำถามที่พบบ่อย</a></li>
               <li><a href="privacy.html">นโยบายความเป็นส่วนตัว</a></li>
@@ -157,9 +326,8 @@
           <div class="footer-col">
             <h4>ติดต่อ</h4>
             <ul>
-              <li><a href="mailto:you@example.com">อีเมลซัพพอร์ต</a></li>
-              <li><a href="#">Chrome Web Store</a></li>
-              <li><a href="#">GitHub</a></li>
+              <li><a href="mailto:suksan.cmu@gmail.com">suksan.cmu@gmail.com</a></li>
+              <li><a href="index.html#extensions">ส่วนขยายทั้งหมด</a></li>
             </ul>
           </div>
         </div>

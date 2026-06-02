@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lazada Product Finder — GCK Application</title>
+    <meta
+      name="description"
+      content="Lazada Product Finder: ส่วนขยาย Chrome ค้นหาสินค้า Lazada ตาม keyword กรองตามรีวิว/ยอดขาย/เรตติ้ง และ export เป็น CSV หรือ Google Sheets ได้ทันที"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- ============ Header ============ -->
+    <header class="site-header">
+      <div class="container nav">
+        <a href="index.html" class="logo">
+          <span class="logo-mark">G</span>
+          GCK Application
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html">หน้าแรก</a></li>
+          <li><a href="index.html#extensions">ส่วนขยาย</a></li>
+          <li><a href="usage.html">วิธีใช้งาน</a></li>
+          <li><a href="faq.html">คำถามที่พบบ่อย</a></li>
+          <li><a href="privacy.html">ความเป็นส่วนตัว</a></li>
+          <li>
+            <a href="#" class="btn btn-primary" style="padding: 8px 18px"
+              >ดาวน์โหลด (เร็ว ๆ นี้)</a
+            >
+          </li>
+        </ul>
+        <button class="nav-toggle" aria-label="เปิดเมนู">☰</button>
+      </div>
+    </header>
+
+    <!-- ============ Page hero ============ -->
+    <section class="page-hero">
+      <div class="container">
+        <div style="display: flex; align-items: center; gap: 18px; flex-wrap: wrap">
+          <div class="ext-icon" style="width: 64px; height: 64px; font-size: 2rem; border-radius: 16px; flex-shrink: 0">
+            🛒
+          </div>
+          <div>
+            <h1 style="margin-bottom: 4px">Lazada Product Finder</h1>
+            <p>
+              <span class="status soon">เร็ว ๆ นี้</span> เวอร์ชัน 1.0.0 •
+              สำหรับ Lazada Thailand
+            </p>
+          </div>
+        </div>
+        <p style="margin-top: 18px; max-width: 660px">
+          ส่วนขยาย Chrome สำหรับนักขายออนไลน์และ affiliate marketer —
+          ค้นหาสินค้า Lazada ตาม keyword กรองตามรีวิว/ยอดขาย/เรตติ้ง
+          แล้ว export เป็น CSV หรือ copy ไป Google Sheets ได้ทันที
+          พร้อมสร้าง affiliate link อัตโนมัติ
+        </p>
+        <div class="btn-row" style="margin-top: 22px">
+          <span class="btn btn-disabled btn-lg">⬇ ดาวน์โหลด (เร็ว ๆ นี้)</span>
+          <a href="#how-it-works" class="btn btn-ghost btn-lg">ดูวิธีใช้งาน</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Features ============ -->
+    <section style="padding-top: 56px">
+      <div class="container">
+        <div class="section-head">
+          <h2>ความสามารถ</h2>
+          <p>ออกแบบสำหรับนักขาย affiliate ที่ต้องการหาสินค้าดีรวดเร็ว</p>
+        </div>
+        <div class="features">
+          <div class="feature-card">
+            <div class="feature-icon">🔍</div>
+            <h3>ค้นหาสินค้า</h3>
+            <p>
+              ใส่ keyword แล้วค้นหาได้หลายหน้าพร้อมกัน ระบบเปิด tab
+              Lazada อัตโนมัติและดึงข้อมูลสินค้าทั้งหมดกลับมา
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⚙️</div>
+            <h3>กรองตามเงื่อนไข</h3>
+            <p>
+              กำหนดรีวิวขั้นต่ำ, ยอดขายขั้นต่ำ, เรตติ้งขั้นต่ำ
+              เพื่อคัดเฉพาะสินค้าที่น่าเชื่อถือและขายดีจริง
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📄</div>
+            <h3>Scrape หน้าที่เปิดอยู่</h3>
+            <p>
+              เปิด Lazada ค้างไว้แล้วกด "Scrape หน้านี้" —
+              ดึงข้อมูลสินค้าจากหน้าที่กำลังเปิดโดยไม่ต้องค้นใหม่
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📋</div>
+            <h3>Copy เป็น TSV</h3>
+            <p>
+              คัดลอกผลลัพธ์เป็นรูปแบบ TSV แล้ววางลง Google Sheets ได้ทันที
+              ข้อมูลเข้า column ถูกต้องทุกช่อง
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⬇️</div>
+            <h3>Export CSV</h3>
+            <p>
+              ดาวน์โหลดผลลัพธ์เป็นไฟล์ .csv เพื่อนำไปวิเคราะห์ใน Excel
+              หรือนำเข้าระบบอื่น ๆ ได้เลย
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔗</div>
+            <h3>Affiliate Link</h3>
+            <p>
+              แปลง URL สินค้าเป็น affiliate link อัตโนมัติ
+              รองรับหลายรูปแบบทั้ง Lazada Deeplink และ custom parameter
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ How it works ============ -->
+    <section id="how-it-works" class="bg-soft">
+      <div class="container">
+        <div class="section-head">
+          <h2>วิธีใช้งาน</h2>
+          <p>3 แท็บ 3 ฟังก์ชัน ใช้งานได้ทันทีหลังติดตั้ง</p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">①</div>
+            <div>
+              <h3>แท็บ "ค้นหา" — หาสินค้า</h3>
+              <p>
+                กรอก keyword เช่น "กระเป๋า" หรือ "โทรศัพท์" ตั้งเงื่อนไขกรอง
+                (รีวิวขั้นต่ำ, ยอดขายขั้นต่ำ, เรตติ้ง, จำนวนหน้า) แล้วกด
+                <strong>ค้นหาสินค้า</strong> ระบบจะเปิด tab Lazada อัตโนมัติและดึงข้อมูลกลับมา
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">②</div>
+            <div>
+              <h3>แท็บ "ผลลัพธ์" — ดูและ export</h3>
+              <p>
+                เมื่อค้นเสร็จ ผลลัพธ์จะแสดงชื่อสินค้า ราคา เรตติ้ง รีวิว ยอดขาย
+                และลิงก์ affiliate กด <strong>คัดลอก TSV</strong> เพื่อวาง Google Sheets
+                หรือ <strong>ดาวน์โหลด CSV</strong> เก็บไว้ใช้ต่อ
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">③</div>
+            <div>
+              <h3>แท็บ "ตั้งค่า" — ปรับ affiliate และคอลัมน์</h3>
+              <p>
+                เลือกคอลัมน์ที่ต้องการ export (ชื่อ / ราคา / เรตติ้ง /
+                รีวิว / ยอดขาย / URL) และตั้งค่า affiliate link ตามโปรแกรมที่ใช้
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout" style="max-width: 780px; margin: 32px auto 0">
+          💡 เคล็ดลับ: ถ้าเปิดหน้า Lazada ค้างไว้แล้ว ให้กด
+          <strong>"Scrape หน้านี้"</strong> แทนการค้นใหม่ — ได้ผลลัพธ์เร็วกว่าและไม่ต้องรอโหลด tab
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Permissions ============ -->
+    <article class="prose">
+      <h2>สิทธิ์การเข้าถึงที่ใช้</h2>
+      <ul>
+        <li><code>storage</code> — บันทึกการตั้งค่าและ affiliate config ในเครื่อง</li>
+        <li><code>activeTab</code>, <code>tabs</code>, <code>scripting</code> — เปิด tab Lazada อัตโนมัติและดึงข้อมูลสินค้า</li>
+        <li><code>clipboardWrite</code> — คัดลอก TSV ไปยัง clipboard</li>
+        <li><code>downloads</code> — ดาวน์โหลดไฟล์ CSV</li>
+        <li>เข้าถึง <code>lazada.co.th</code> เท่านั้น</li>
+      </ul>
+
+      <p style="margin-top: 32px">
+        <a href="index.html#extensions">← กลับไปดูส่วนขยายทั้งหมด</a>
+      </p>
+    </article>
+
+    <!-- ============ Footer ============ -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="logo">
+              <span class="logo-mark">G</span> GCK Application
+            </div>
+            <p>
+              ศูนย์รวมส่วนขยาย Chrome ภาษาไทยจาก GCK
+              ที่ช่วยให้การทำงานบนเว็บของคุณง่ายและรวดเร็วยิ่งขึ้น
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>เมนู</h4>
+            <ul>
+              <li><a href="index.html">หน้าแรก</a></li>
+              <li><a href="index.html#extensions">ส่วนขยาย</a></li>
+              <li><a href="usage.html">วิธีใช้งาน</a></li>
+              <li><a href="faq.html">คำถามที่พบบ่อย</a></li>
+              <li><a href="privacy.html">นโยบายความเป็นส่วนตัว</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>ติดต่อ</h4>
+            <ul>
+              <li><a href="mailto:you@example.com">อีเมลซัพพอร์ต</a></li>
+              <li><a href="#">Chrome Web Store</a></li>
+              <li><a href="#">GitHub</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          © <span data-year>2026</span> GCK Application • สงวนลิขสิทธิ์
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
