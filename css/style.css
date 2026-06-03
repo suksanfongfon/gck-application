@@ -359,6 +359,28 @@ section {
   font-size: 0.98rem;
 }
 
+/* หัวข้อหมวดภายใน Roadmap grid (กินเต็มแถว) */
+.cat-head {
+  grid-column: 1 / -1;
+  margin-top: 26px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--brand-light);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.cat-head:first-child {
+  margin-top: 0;
+}
+.cat-head h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--brand-dark);
+}
+.cat-head .cat-emoji {
+  font-size: 1.4rem;
+}
+
 /* ---------- Steps (วิธีใช้งาน) ---------- */
 .steps {
   display: grid;
