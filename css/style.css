@@ -765,6 +765,79 @@ section {
   flex-wrap: wrap;
 }
 
+/* Service / รับทำ section */
+.service-band {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  border-radius: var(--radius);
+  padding: 56px 40px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 32px;
+  align-items: center;
+  color: #fff;
+}
+
+.service-band h2 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin-bottom: 10px;
+}
+
+.service-band p {
+  color: #94a3b8;
+  font-size: 1.08rem;
+  max-width: 560px;
+  margin-bottom: 0;
+}
+
+.service-band .price-tag {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 999px;
+  padding: 6px 16px;
+  margin-bottom: 14px;
+  font-size: 0.95rem;
+  color: #a5b4fc;
+}
+
+.service-band .price-tag strong {
+  color: #fff;
+  font-size: 1.15rem;
+}
+
+.service-band-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.btn-facebook {
+  background: #1877f2;
+  color: #fff;
+  border-color: #1877f2;
+  white-space: nowrap;
+}
+
+.btn-facebook:hover {
+  background: #1565d8;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 640px) {
+  .service-band {
+    grid-template-columns: 1fr;
+    padding: 36px 24px;
+  }
+  .service-band-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
 /* Screenshot gallery */
 .screenshot-gallery {
   display: grid;
