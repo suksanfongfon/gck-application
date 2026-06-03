@@ -4,16 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lazada Product Finder — GCK Chrome Extension</title>
-    <meta
-      name="description"
-      content="Lazada Product Finder v2: ค้นหาสินค้า Lazada กรองตามรีวิว/ยอดขาย/ส่วนลด เรียงตามโอกาสขาย ติดตามคู่แข่ง และ export ไป Google Sheets / CSV"
-    />
+    <meta name="description" content="Lazada Product Finder v2: ค้นหาสินค้า Lazada กรองตามรีวิว/ยอดขาย/ส่วนลด เรียงตามโอกาสขาย ติดตามคู่แข่ง และ export ไป Google Sheets / CSV" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -30,20 +24,23 @@
           <li><a href="faq.html">คำถามที่พบบ่อย</a></li>
           <li><a href="privacy.html">ความเป็นส่วนตัว</a></li>
           <li>
-            <a href="#" class="btn btn-primary" style="padding: 8px 18px">ดาวน์โหลด (เร็ว ๆ นี้)</a>
+            <a href="#" class="btn btn-primary" style="padding: 8px 18px">＋ เพิ่มลงใน Chrome</a>
           </li>
         </ul>
         <button class="nav-toggle" aria-label="เปิดเมนู">☰</button>
       </div>
     </header>
 
+    <!-- Hero -->
     <section class="page-hero">
       <div class="container">
         <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
-          <div class="ext-icon" style="width:80px;height:80px;font-size:2.4rem;border-radius:20px;flex-shrink:0;box-shadow:var(--shadow-sm)">🛒</div>
+          <div class="ext-icon has-img" style="width:80px;height:80px;flex-shrink:0;box-shadow:var(--shadow-sm)">
+            <img src="images/lazada-product-finder.png" alt="Lazada Product Finder" />
+          </div>
           <div>
             <h1 style="margin-bottom:4px">Lazada Product Finder</h1>
-            <p><span class="status soon">เร็ว ๆ นี้</span> เวอร์ชัน 2.0.0 • สำหรับ Lazada Thailand</p>
+            <p><span class="status ready">พร้อมใช้งาน</span> เวอร์ชัน 2.0.0 • สำหรับ Lazada Thailand</p>
           </div>
         </div>
         <p style="margin-top:18px;max-width:660px">
@@ -52,12 +49,13 @@
           แล้ว export เป็น CSV หรือ copy ไป Google Sheets ได้ทันที
         </p>
         <div class="btn-row" style="margin-top:22px">
-          <span class="btn btn-disabled btn-lg">⬇ ดาวน์โหลด (เร็ว ๆ นี้)</span>
-          <a href="#how-it-works" class="btn btn-ghost btn-lg">ดูวิธีใช้งาน</a>
+          <a href="#" class="btn btn-primary btn-lg">＋ เพิ่มลงใน Chrome</a>
+          <a href="#screenshots" class="btn btn-ghost btn-lg">ดูตัวอย่าง</a>
         </div>
       </div>
     </section>
 
+    <!-- Features -->
     <section style="padding-top:56px">
       <div class="container">
         <div class="section-head">
@@ -99,7 +97,25 @@
       </div>
     </section>
 
-    <section id="how-it-works" class="bg-soft">
+    <!-- Screenshots -->
+    <section id="screenshots" class="bg-soft">
+      <div class="container">
+        <div class="section-head">
+          <h2>ตัวอย่างการใช้งาน</h2>
+          <p>ดูหน้าตาจริงก่อนติดตั้ง</p>
+        </div>
+        <div class="screenshot-gallery">
+          <img src="images/lazada-ss-1.png" alt="ค้นหา & กรองสินค้า Lazada แบบละเอียด" />
+          <img src="images/lazada-ss-2.png" alt="รู้ทันทีว่าตัวไหนน่าขาย & ทำเงิน" />
+          <img src="images/lazada-ss-3.png" alt="หาสินค้าลดราคามากที่สุด" />
+          <img src="images/lazada-ss-4.png" alt="ติดตามราคา & ยอดขายคู่แข่งอัตโนมัติ" />
+          <img src="images/lazada-ss-5.png" alt="Export พร้อมใช้ Google Sheets / CSV" />
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section>
       <div class="container">
         <div class="section-head">
           <h2>วิธีใช้งาน</h2>
@@ -134,6 +150,47 @@
       </div>
     </section>
 
+    <!-- Install -->
+    <section id="install" class="bg-soft">
+      <div class="container">
+        <div class="section-head">
+          <h2>วิธีติดตั้ง</h2>
+          <p>ติดตั้งผ่าน Chrome Web Store ได้ในไม่กี่คลิก</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div>
+              <h3>กด "เพิ่มลงใน Chrome"</h3>
+              <p>คลิกปุ่ม <strong>เพิ่มลงใน Chrome</strong> บนหน้านี้ หรือค้นหา "Lazada Product Finder" ใน Chrome Web Store โดยตรง</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div>
+              <h3>ยืนยันการติดตั้ง</h3>
+              <p>กด <strong>เพิ่มส่วนขยาย</strong> ในหน้าต่างยืนยัน Chrome จะติดตั้งให้อัตโนมัติภายในไม่กี่วินาที</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div>
+              <h3>ปักหมุดไอคอน</h3>
+              <p>คลิกไอคอนต่อจิ๊กซอว์ 🧩 มุมขวาบน แล้วกดหมุด 📌 ข้างชื่อ Lazada Product Finder</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div>
+              <h3>เปิดหน้า Lazada และเริ่มค้นหา</h3>
+              <p>คลิกไอคอนเพื่อเปิด popup กรอก keyword ตั้งเงื่อนไขกรอง แล้วกด <strong>ค้นหาสินค้า</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Permissions -->
     <article class="prose">
       <h2>สิทธิ์การเข้าถึงที่ใช้</h2>
       <ul>

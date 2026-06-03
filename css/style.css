@@ -765,6 +765,25 @@ section {
   flex-wrap: wrap;
 }
 
+/* Screenshot gallery */
+.screenshot-gallery {
+  display: grid;
+  gap: 20px;
+}
+
+.screenshot-gallery img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.screenshot-gallery img:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px -12px rgba(15,23,42,0.22);
+}
+
 .btn-disabled {
   background: var(--bg-soft);
   color: var(--text-muted);
