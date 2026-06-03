@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cross-Post</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+<div class="container">
+
+  <header class="header">
+    <div class="brand">
+      <span class="brand-mark">📤</span>
+      <div class="brand-text">
+        <h1>Cross-Post</h1>
+        <p>โพสต์ครั้งเดียว ลงหลายแพลตฟอร์ม</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mode tabs -->
+  <nav class="tabs">
+    <button class="tab active" data-tab="compose">✍️ เขียนโพสต์</button>
+    <button class="tab" data-tab="settings">⚙️ ตั้งค่า</button>
+  </nav>
+
+  <!-- ===== Compose Tab ===== -->
+  <section id="tab-compose" class="tab-content active">
+
+    <div class="field">
+      <label>ข้อความโพสต์</label>
+      <textarea id="post-text" rows="5" placeholder="พิมพ์ข้อความที่จะโพสต์... ใช้ได้ทุกแพลตฟอร์มพร้อมกัน"></textarea>
+      <div class="char-row">
+        <span id="char-count">0</span> ตัวอักษร
+        <span id="char-warn" class="char-warn hidden"></span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>รูปภาพ (ไม่บังคับ)</label>
+      <div class="img-pick">
+        <input type="file" id="post-image" accept="image/*" hidden />
+        <button type="button" id="btn-pick-image" class="btn btn-ghost btn-block">🖼️ เลือกรูปภาพ</button>
+        <div id="img-preview-wrap" class="img-preview-wrap hidden">
+          <img id="img-preview" alt="preview" />
+          <button type="button" id="btn-clear-image" class="img-clear" title="ลบรูป">✕</button>
+        </div>
+      </div>
+      <p class="img-note">รูปจะถูกก็อปไปคลิปบอร์ด — กด ⌘/Ctrl+V วางในช่องเขียนโพสต์ของแต่ละแพลตฟอร์มได้</p>
+    </div>
+
+    <div class="field">
+      <label>เลือกแพลตฟอร์ม</label>
+      <div class="platforms">
+        <label class="plat" data-limit="280">
+          <input type="checkbox" class="plat-check" value="x" checked />
+          <span class="plat-ico" style="background:#000">𝕏</span>
+          <span class="plat-name">X (Twitter)</span>
+          <span class="plat-tag auto">เติมให้อัตโนมัติ</span>
+        </label>
+        <label class="plat" data-limit="500">
+          <input type="checkbox" class="plat-check" value="threads" checked />
+          <span class="plat-ico" style="background:#000">@</span>
+          <span class="plat-name">Threads</span>
+          <span class="plat-tag auto">เติมให้อัตโนมัติ</span>
+        </label>
+        <label class="plat" data-limit="63206">
+          <input type="checkbox" class="plat-check" value="facebook" checked />
+          <span class="plat-ico" style="background:#1877f2">f</span>
+          <span class="plat-name">Facebook</span>
+          <span class="plat-tag paste">ก็อป+วาง</span>
+        </label>
+        <label class="plat" data-limit="3000">
+          <input type="checkbox" class="plat-check" value="linkedin" />
+          <span class="plat-ico" style="background:#0a66c2">in</span>
+          <span class="plat-name">LinkedIn</span>
+          <span class="plat-tag paste">ก็อป+วาง</span>
+        </label>
+        <label class="plat" data-limit="2200">
+          <input type="checkbox" class="plat-check" value="instagram" />
+          <span class="plat-ico" style="background:linear-gradient(45deg,#f09433,#dc2743,#bc1888)">📷</span>
+          <span class="plat-name">Instagram</span>
+          <span class="plat-tag paste">ก็อป+วาง</span>
+        </label>
+      </div>
+    </div>
+
+    <div id="compose-msg" class="status-bar hidden"></div>
+
+    <button id="btn-post" class="btn btn-primary btn-block">
+      🚀 เปิดทุกแพลตฟอร์ม &amp; เติมข้อความ
+    </button>
+
+    <p class="foot-note">
+      เครื่องมือนี้จะ <strong>เปิดหน้าเขียนโพสต์</strong> และเติม/ก็อปข้อความให้
+      — คุณตรวจทานแล้วกด “โพสต์” เองในแต่ละแพลตฟอร์ม
+    </p>
+  </section>
+
+  <!-- ===== Settings Tab ===== -->
+  <section id="tab-settings" class="tab-content hidden">
+
+    <div class="field">
+      <label>เปิดแท็บแบบ</label>
+      <select id="opt-tab-mode">
+        <option value="background">เปิดเบื้องหลัง (ไม่สลับไปทันที)</option>
+        <option value="active">เปิดและสลับไปทีละแท็บ</option>
+      </select>
+    </div>
+
+    <div class="toggle-row">
+      <label class="toggle">
+        <input type="checkbox" id="opt-remember" checked />
+        <span class="slider"></span>
+        จำข้อความ/แพลตฟอร์มล่าสุด
+      </label>
+    </div>
+
+    <div class="toggle-row">
+      <label class="toggle">
+        <input type="checkbox" id="opt-helper" checked />
+        <span class="slider"></span>
+        แสดงตัวช่วยวาง (toast) บนหน้าเว็บ
+      </label>
+    </div>
+
+    <button id="btn-save-settings" class="btn btn-primary btn-block" style="margin-top:12px">
+      💾 บันทึกการตั้งค่า
+    </button>
+    <div id="settings-saved" class="success hidden">✅ บันทึกแล้ว</div>
+
+    <div class="warn-box" style="margin-top:14px">
+      ℹ️ X และ Threads รองรับการเติมข้อความผ่านลิงก์ทางการ ส่วน Facebook,
+      LinkedIn และ Instagram จะใช้วิธีก็อปข้อความให้ แล้ววางเองในช่องเขียนโพสต์
+    </div>
+
+    <div class="about">
+      <p>GCK Chrome Extension</p>
+      <a href="https://www.facebook.com/GCKApplication" target="_blank" rel="noopener">Facebook Page</a>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  // --- chrome API stub สำหรับ preview เท่านั้น ---
+  window.chrome = {
+    storage: { local: {
+      _d: {},
+      get(keys, cb){ const r={}; (Array.isArray(keys)?keys:[keys]).forEach(k=>r[k]=this._d[k]); cb? cb(r): Promise.resolve(r); return Promise.resolve(r);},
+      set(o, cb){ Object.assign(this._d,o); cb&&cb(); return Promise.resolve(); }
+    }},
+    runtime: { sendMessage: async (m)=>({opened:(m.platforms||[]).length}) }
+  };
+</script>
+<script>
+/* ===== Cross-Post — popup.js ===== */
+
+const LIMITS = {
+  x: 280,
+  threads: 500,
+  facebook: 63206,
+  linkedin: 3000,
+  instagram: 2200,
+};
+const PLAT_LABEL = {
+  x: "X", threads: "Threads", facebook: "Facebook",
+  linkedin: "LinkedIn", instagram: "Instagram",
+};
+
+const $  = (s) => document.querySelector(s);
+const $$ = (s) => [...document.querySelectorAll(s)];
+
+let imageDataUrl = null;
+
+/* ---------- Tabs ---------- */
+$$(".tab").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    $$(".tab").forEach((b) => b.classList.remove("active"));
+    $$(".tab-content").forEach((c) => c.classList.add("hidden"));
+    btn.classList.add("active");
+    $("#tab-" + btn.dataset.tab).classList.remove("hidden");
+  });
+});
+
+/* ---------- Char counter + over-limit highlight ---------- */
+const textEl = $("#post-text");
+function refreshCount() {
+  const len = textEl.value.length;
+  $("#char-count").textContent = len;
+
+  // ตรวจแพลตฟอร์มที่ถูกเลือกและเกินลิมิต
+  const overNames = [];
+  $$(".plat").forEach((row) => {
+    const cb = row.querySelector(".plat-check");
+    const lim = Number(row.dataset.limit);
+    const over = cb.checked && len > lim;
+    row.classList.toggle("over", over);
+    if (over) overNames.push(`${PLAT_LABEL[cb.value]} (${lim})`);
+  });
+
+  const warn = $("#char-warn");
+  if (overNames.length) {
+    warn.textContent = "⚠️ เกินลิมิต: " + overNames.join(", ");
+    warn.classList.remove("hidden");
+  } else {
+    warn.classList.add("hidden");
+  }
+}
+textEl.addEventListener("input", refreshCount);
+$$(".plat-check").forEach((cb) => cb.addEventListener("change", refreshCount));
+
+/* ---------- Image picker ---------- */
+$("#btn-pick-image").addEventListener("click", () => $("#post-image").click());
+
+$("#post-image").addEventListener("change", (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  if (file.size > 4 * 1024 * 1024) {
+    showMsg("รูปใหญ่เกิน 4MB — อาจก็อปไปคลิปบอร์ดไม่ได้ ลองย่อรูปก่อน", "error");
+  }
+  const reader = new FileReader();
+  reader.onload = () => {
+    imageDataUrl = reader.result;
+    $("#img-preview").src = imageDataUrl;
+    $("#img-preview-wrap").classList.remove("hidden");
+    $("#btn-pick-image").textContent = "🖼️ เปลี่ยนรูปภาพ";
+  };
+  reader.readAsDataURL(file);
+});
+
+$("#btn-clear-image").addEventListener("click", () => {
+  imageDataUrl = null;
+  $("#post-image").value = "";
+  $("#img-preview").src = "";
+  $("#img-preview-wrap").classList.add("hidden");
+  $("#btn-pick-image").textContent = "🖼️ เลือกรูปภาพ";
+});
+
+/* ---------- Helpers ---------- */
+function showMsg(text, kind = "info") {
+  const el = $("#compose-msg");
+  el.className = "status-bar " + kind;
+  el.innerHTML = text;
+  el.classList.remove("hidden");
+}
+
+function selectedPlatforms() {
+  return $$(".plat-check").filter((c) => c.checked).map((c) => c.value);
+}
+
+async function copyText(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch (err) {
+    console.warn("clipboard text failed", err);
+    return false;
+  }
+}
+
+/* ---------- Main: open tabs + prefill ---------- */
+$("#btn-post").addEventListener("click", async () => {
+  const text = textEl.value.trim();
+  const plats = selectedPlatforms();
+
+  if (!plats.length) return showMsg("เลือกอย่างน้อย 1 แพลตฟอร์มก่อนนะ", "error");
+  if (!text && !imageDataUrl) return showMsg("พิมพ์ข้อความ หรือเลือกรูปก่อนนะ", "error");
+
+  // ก็อปข้อความไปคลิปบอร์ด (ผู้ใช้กดปุ่ม = user gesture)
+  let copied = false;
+  if (text) copied = await copyText(text);
+
+  // เก็บ payload ให้ content script ใช้ (toast ช่วยวาง)
+  const settings = await getSettings();
+  await chrome.storage.local.set({
+    crosspost_pending: {
+      text,
+      image: imageDataUrl || null,
+      ts: Date.now(),
+      helper: settings.helper !== false,
+    },
+  });
+
+  // จำข้อความล่าสุด
+  if (settings.remember !== false) {
+    await chrome.storage.local.set({
+      crosspost_last: { text, platforms: plats },
+    });
+  }
+
+  // สั่ง background เปิดแท็บ
+  const res = await chrome.runtime.sendMessage({
+    type: "open-tabs",
+    platforms: plats,
+    text,
+    tabMode: settings.tabMode || "background",
+  });
+
+  const autoList = plats.filter((p) => p === "x" || p === "threads").map((p) => PLAT_LABEL[p]);
+  const pasteList = plats.filter((p) => p !== "x" && p !== "threads").map((p) => PLAT_LABEL[p]);
+
+  let html = `✅ เปิด ${res?.opened ?? plats.length} แท็บแล้ว`;
+  if (autoList.length) html += `<br>• เติมข้อความให้: <strong>${autoList.join(", ")}</strong>`;
+  if (pasteList.length) {
+    html += `<br>• ก็อป+วาง: <strong>${pasteList.join(", ")}</strong>`;
+    html += copied
+      ? `<br><span style="font-size:.92em">ข้อความถูกก็อปแล้ว — ในแต่ละหน้า กด ⌘/Ctrl+V วางได้เลย</span>`
+      : `<br><span style="font-size:.92em">ก็อปข้อความไม่สำเร็จ ใช้ปุ่มในกล่องช่วยบนหน้าเว็บแทน</span>`;
+  }
+  showMsg(html, "success");
+});
+
+/* ---------- Settings ---------- */
+async function getSettings() {
+  const { crosspost_settings } = await chrome.storage.local.get("crosspost_settings");
+  return crosspost_settings || {};
+}
+
+$("#btn-save-settings").addEventListener("click", async () => {
+  await chrome.storage.local.set({
+    crosspost_settings: {
+      tabMode: $("#opt-tab-mode").value,
+      remember: $("#opt-remember").checked,
+      helper: $("#opt-helper").checked,
+    },
+  });
+  const ok = $("#settings-saved");
+  ok.classList.remove("hidden");
+  setTimeout(() => ok.classList.add("hidden"), 1800);
+});
+
+/* ---------- Init ---------- */
+(async function init() {
+  const s = await getSettings();
+  $("#opt-tab-mode").value = s.tabMode || "background";
+  $("#opt-remember").checked = s.remember !== false;
+  $("#opt-helper").checked = s.helper !== false;
+
+  if (s.remember !== false) {
+    const { crosspost_last } = await chrome.storage.local.get("crosspost_last");
+    if (crosspost_last) {
+      textEl.value = crosspost_last.text || "";
+      if (Array.isArray(crosspost_last.platforms)) {
+        $$(".plat-check").forEach((cb) => {
+          cb.checked = crosspost_last.platforms.includes(cb.value);
+        });
+      }
+    }
+  }
+  refreshCount();
+})();
+
+</script>
+</body>
+</html>
