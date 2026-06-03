@@ -12,6 +12,63 @@
 
 ---
 
+## 🔄 Standard Workflow — สร้าง Extension ใหม่ทุกตัว
+
+ทำตามลำดับนี้ทุกครั้ง ห้ามข้ามขั้น:
+
+### ขั้นที่ 1 — Idea & เพิ่มในเว็บ
+- [ ] กำหนดชื่อ, ฟีเจอร์หลัก, กลุ่มเป้าหมาย
+- [ ] เพิ่มการ์ด **"เร็ว ๆ นี้"** ใน `index.html` (section `#extensions`)
+- [ ] เพิ่มการ์ด **feature** ใน Roadmap section (`index.html`)
+- [ ] `git push` → เว็บอัปเดต
+
+### ขั้นที่ 2 — สร้าง Extension
+- [ ] สร้างโฟลเดอร์ใน `/Users/suksanfongfon/<ชื่อ Extension>/`
+- [ ] เขียนไฟล์ครบ: `manifest.json`, `popup.html/css/js`, `background.js`, `content.js`
+- [ ] ตรวจ `description` ใน manifest ≤ **132 ตัวอักษร**
+- [ ] โหลดทดสอบใน Chrome (`chrome://extensions` → Load unpacked)
+
+### ขั้นที่ 3 — Icon + ภาพตัวอย่าง 5 ภาพ
+- [ ] เขียน `generate_icons.py` สร้าง icon 4 ขนาด (16/48/128/512)
+- [ ] รัน `python3 generate_icons.py` ได้ `icons/` ครบ
+- [ ] สร้าง store screenshots 5 ภาพ (1280×800) — แต่ละภาพมี:
+  - พื้นหลังสีอ่อน + mockup popup ด้านขวา
+  - หัวข้อใหญ่ภาษาไทยด้านซ้าย
+  - bullet points อธิบายฟีเจอร์ 3 ข้อ
+  - ใช้ Python (`make_screenshots.py`) หรือ Canva ก็ได้
+- [ ] คัดลอก icon และ screenshots ไปที่ `Website chrome extension/images/`
+- [ ] อัปเดตการ์ดในเว็บจาก "เร็ว ๆ นี้" → **"พร้อมใช้งาน"** + icon จริง
+- [ ] สร้างหน้ารายละเอียด `ชื่อ-extension.html` ครบ (features, screenshots, วิธีติดตั้ง)
+- [ ] `git push`
+
+### ขั้นที่ 4 — รอทดสอบ ✋ (หยุดรอ owner)
+> **หยุดรอ** ให้ owner ทดลองใช้งานจริง แล้วแจ้งผลหรือสิ่งที่ต้องแก้ไข
+> ห้าม proceed ไปขั้น 5 โดยไม่ได้รับ OK จาก owner
+
+- รับ feedback → แก้ code และอัปเดตเว็บตามที่แจ้ง
+- ทำซ้ำจนกว่า owner จะบอกว่า "ผ่าน" หรือ "OK"
+
+### ขั้นที่ 5 — เตรียม Deploy (Chrome Web Store)
+เมื่อได้รับ "ผ่าน" จาก owner แล้วเท่านั้น:
+
+- [ ] **ZIP:** `cd <extension folder> && zip -r -X ../ชื่อ-extension-vX.X.X.zip . -x ".claude/*" ".DS_Store" "*/.DS_Store"`
+- [ ] ตรวจ description อีกครั้ง ≤ 132 ตัวอักษร
+- [ ] เตรียม **Store listing** (อยู่ใน `STORE_LISTING.md` ในโฟลเดอร์ extension):
+  - ชื่อ (≤ 45 chars)
+  - Short description (≤ 132 chars) = manifest description
+  - Long description (ภาษาไทย + ฟีเจอร์ครบ)
+  - Screenshots 5 ภาพ (1280×800 หรือ 640×400)
+  - Icon 128px
+- [ ] เตรียม **Privacy Practices** justification ทุก permission:
+  - Single purpose description
+  - Justification สำหรับ `storage`, `tabs`, host permissions, remote code
+  - Data use certifications (checkbox ทั้งหมด)
+- [ ] Privacy Policy URL: `https://suksanfongfon.github.io/gck-application/privacy.html`
+- [ ] อัปเดต `privacy.html` ให้มีตารางสิทธิ์ของ extension ตัวใหม่
+- [ ] อัปเดต `CLAUDE.md` — เพิ่มชื่อ extension และโฟลเดอร์ในตาราง
+
+---
+
 ## Folder Structure
 
 ```
