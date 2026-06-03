@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopee Product Finder — GCK Chrome Extension</title>
+    <meta name="description" content="Shopee Product Finder: ค้นหาสินค้า Shopee กรองตามรีวิว/ยอดขาย/ส่วนลด เรียงตามโอกาสขาย ติดตามคู่แข่ง และ export ไป Google Sheets / CSV" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a href="index.html" class="logo">
+          <span class="logo-mark">G</span>
+          GCK Chrome Extension
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html">หน้าแรก</a></li>
+          <li><a href="index.html#extensions">ส่วนขยาย</a></li>
+          <li><a href="usage.html">วิธีใช้งาน</a></li>
+          <li><a href="faq.html">คำถามที่พบบ่อย</a></li>
+          <li><a href="privacy.html">ความเป็นส่วนตัว</a></li>
+          <li>
+            <a href="#" class="btn btn-primary" style="padding: 8px 18px">＋ เพิ่มลงใน Chrome</a>
+          </li>
+        </ul>
+        <button class="nav-toggle" aria-label="เปิดเมนู">☰</button>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
+          <div class="ext-icon has-img" style="width:80px;height:80px;flex-shrink:0;box-shadow:var(--shadow-sm)">
+            <img src="images/shopee-product-finder.png" alt="Shopee Product Finder" />
+          </div>
+          <div>
+            <h1 style="margin-bottom:4px">Shopee Product Finder</h1>
+            <p><span class="status ready">พร้อมใช้งาน</span> เวอร์ชัน 1.0.0 • สำหรับ Shopee Thailand</p>
+          </div>
+        </div>
+        <p style="margin-top:18px;max-width:660px">
+          ค้นหาสินค้า Shopee ตาม keyword กรองตามรีวิว/ยอดขาย/เรตติ้ง/ส่วนลด
+          เรียงตามโอกาสขาย ติดตามการเปลี่ยนแปลงราคาและยอดขายของคู่แข่ง
+          แล้ว export เป็น CSV หรือ copy ไป Google Sheets ได้ทันที
+        </p>
+        <div class="btn-row" style="margin-top:22px">
+          <a href="#" class="btn btn-primary btn-lg">＋ เพิ่มลงใน Chrome</a>
+          <a href="#screenshots" class="btn btn-ghost btn-lg">ดูตัวอย่าง</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section style="padding-top:56px">
+      <div class="container">
+        <div class="section-head">
+          <h2>ความสามารถ</h2>
+          <p>ออกแบบสำหรับนักขายออนไลน์และ affiliate marketer ที่ต้องการข้อมูลเชิงลึก</p>
+        </div>
+        <div class="features">
+          <div class="feature-card">
+            <div class="feature-icon">🔍</div>
+            <h3>ค้นหาแบบปรับความลึกได้</h3>
+            <p>เลือก 4 ระดับ — เร็ว (~60 สินค้า), 300 สินค้า, 600 สินค้า หรือดึงจนสุดอัตโนมัติ</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⚙️</div>
+            <h3>กรอง 4 เงื่อนไข</h3>
+            <p>รีวิวขั้นต่ำ, ยอดขายขั้นต่ำ, เรตติ้งขั้นต่ำ และ <strong>ส่วนลดขั้นต่ำ (%)</strong> — คัดสินค้าที่น่าสนใจได้แม่นยำ</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔥</div>
+            <h3>เรียงตามโอกาสขาย</h3>
+            <p>เรียงได้ 9 แบบ — น่าขายมากสุด, ลดราคามากสุด, ขายพุ่ง (เทียบครั้งก่อน), ขายดี, รายได้สูงสุด, ราคา และเรตติ้ง</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⭐</div>
+            <h3>คะแนน "น่าขาย" อัตโนมัติ</h3>
+            <p>ระบบประเมินสินค้าแต่ละชิ้นเป็นคะแนน 0–100 จากยอดขาย ส่วนลด เรตติ้ง และรีวิว ช่วยตัดสินใจได้เร็ว</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📈</div>
+            <h3>ติดตามคู่แข่งอัตโนมัติ</h3>
+            <p>ค้น keyword เดิมซ้ำครั้งถัดไป ระบบเทียบราคาและยอดขายกับครั้งก่อนให้อัตโนมัติ เห็นทันทีว่าอะไร "ขายพุ่ง"</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📋</div>
+            <h3>Export ครบทุกคอลัมน์</h3>
+            <p>เลือก export ได้ 10 คอลัมน์: ชื่อ, ราคา, ราคาเต็ม, ส่วนลด %, เรตติ้ง, รีวิว, ยอดขาย, <strong>คะแนนน่าขาย</strong>, รายได้โดยประมาณ, URL</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section id="screenshots" class="bg-soft">
+      <div class="container">
+        <div class="section-head">
+          <h2>ตัวอย่างการใช้งาน</h2>
+          <p>ดูหน้าตาจริงก่อนติดตั้ง</p>
+        </div>
+        <div class="screenshot-gallery">
+          <img src="images/shopee-ss-1.png" alt="ค้นหา & กรองสินค้า Shopee แบบละเอียด" />
+          <img src="images/shopee-ss-2.png" alt="รู้ทันทีว่าตัวไหนน่าขาย & ทำเงิน" />
+          <img src="images/shopee-ss-3.png" alt="ติดตามราคา & ยอดขายคู่แข่งอัตโนมัติ" />
+          <img src="images/shopee-ss-4.png" alt="Export พร้อมใช้ Google Sheets / CSV" />
+          <img src="images/shopee-ss-5.png" alt="เร็ว แม่นยำ ปลอดภัย" />
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <h2>วิธีใช้งาน</h2>
+          <p>3 แท็บ ใช้งานง่าย ได้ข้อมูลเชิงลึกพร้อมเลย</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">①</div>
+            <div>
+              <h3>แท็บ "ค้นหา" — ตั้งเงื่อนไขและค้นหา</h3>
+              <p>กรอก keyword เลือกความลึก (เร็ว / 300 / 600 / จนสุด) และตั้งเงื่อนไขกรอง ได้แก่ รีวิวขั้นต่ำ, ยอดขายขั้นต่ำ, เรตติ้งขั้นต่ำ, ส่วนลดขั้นต่ำ แล้วกด <strong>ค้นหาสินค้า</strong></p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">②</div>
+            <div>
+              <h3>แท็บ "ผลลัพธ์" — วิเคราะห์และ export</h3>
+              <p>เลือกเรียงตามโอกาสขาย ลดราคา หรือ momentum (ขายพุ่ง) ถ้าเคยค้น keyword นี้มาก่อน ระบบแสดงการเปลี่ยนแปลงจากครั้งก่อนให้อัตโนมัติ จากนั้น <strong>คัดลอก TSV</strong> ไป Google Sheets หรือ <strong>ดาวน์โหลด CSV</strong></p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">③</div>
+            <div>
+              <h3>แท็บ "ตั้งค่า" — เลือกคอลัมน์และจัดการประวัติ</h3>
+              <p>เลือกคอลัมน์ที่ต้องการ export ได้ทั้งหมด 10 คอลัมน์ และล้างประวัติการติดตามคู่แข่งได้จากหัวข้อ "การติดตามคู่แข่ง"</p>
+            </div>
+          </div>
+        </div>
+        <div class="callout" style="max-width:780px;margin:32px auto 0">
+          💡 ค้น keyword เดิมซ้ำทุกวัน/ทุกสัปดาห์ แล้วเรียงตาม <strong>"ขายพุ่ง (เทียบครั้งก่อน)"</strong> เพื่อจับ trend สินค้าที่กำลังมาก่อนคู่แข่ง
+        </div>
+      </div>
+    </section>
+
+    <!-- Install -->
+    <section id="install" class="bg-soft">
+      <div class="container">
+        <div class="section-head">
+          <h2>วิธีติดตั้ง</h2>
+          <p>ติดตั้งผ่าน Chrome Web Store ได้ในไม่กี่คลิก</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div>
+              <h3>กด "เพิ่มลงใน Chrome"</h3>
+              <p>คลิกปุ่ม <strong>เพิ่มลงใน Chrome</strong> บนหน้านี้ หรือค้นหา "Shopee Product Finder" ใน Chrome Web Store โดยตรง</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div>
+              <h3>ยืนยันการติดตั้ง</h3>
+              <p>กด <strong>เพิ่มส่วนขยาย</strong> ในหน้าต่างยืนยัน Chrome จะติดตั้งให้อัตโนมัติภายในไม่กี่วินาที</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div>
+              <h3>ปักหมุดไอคอน</h3>
+              <p>คลิกไอคอนต่อจิ๊กซอว์ 🧩 มุมขวาบน แล้วกดหมุด 📌 ข้างชื่อ Shopee Product Finder</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div>
+              <h3>เปิดหน้า Shopee และเริ่มค้นหา</h3>
+              <p>คลิกไอคอนเพื่อเปิด popup กรอก keyword ตั้งเงื่อนไขกรอง แล้วกด <strong>ค้นหาสินค้า</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Permissions -->
+    <article class="prose">
+      <h2>สิทธิ์การเข้าถึงที่ใช้</h2>
+      <ul>
+        <li><code>storage</code> — บันทึกการตั้งค่าและ <strong>ประวัติการติดตามราคา/ยอดขาย</strong> ในเครื่อง</li>
+        <li><code>tabs</code>, <code>scripting</code> — เปิด tab Shopee อัตโนมัติและดึงข้อมูลสินค้า</li>
+        <li><code>clipboardWrite</code> — คัดลอก TSV ไปยัง clipboard เมื่อผู้ใช้กดปุ่ม</li>
+        <li><code>downloads</code> — ดาวน์โหลดไฟล์ CSV เมื่อผู้ใช้กดปุ่ม</li>
+        <li>เข้าถึง <code>shopee.co.th</code> เท่านั้น — ข้อมูลที่อ่านเป็นข้อมูลสาธารณะบนหน้าค้นหา</li>
+      </ul>
+      <div class="callout">
+        🔒 ส่วนขยายนี้ <strong>ไม่ส่งข้อมูลออกนอกเครื่องในทุกกรณี</strong>
+        ประวัติการติดตามคู่แข่งเก็บใน <code>chrome.storage.local</code> และลบออกได้ตลอดเวลาจากแท็บตั้งค่า
+        อ่านนโยบายฉบับเต็มได้ที่ <a href="privacy.html">หน้านโยบายความเป็นส่วนตัว</a>
+      </div>
+      <p style="margin-top:32px;color:var(--text-muted);font-size:0.9rem">
+        ส่วนขยายนี้เป็นเครื่องมือของบุคคลที่สาม ไม่ได้เกี่ยวข้องหรือได้รับการรับรองจาก Shopee
+      </p>
+      <p style="margin-top:16px"><a href="index.html#extensions">← กลับไปดูส่วนขยายทั้งหมด</a></p>
+    </article>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="logo"><span class="logo-mark">G</span> GCK Chrome Extension</div>
+            <p>ศูนย์รวมส่วนขยาย Chrome ภาษาไทยจาก GCK ที่ช่วยให้การทำงานบนเว็บของคุณง่ายและรวดเร็วยิ่งขึ้น</p>
+          </div>
+          <div class="footer-col">
+            <h4>เมนู</h4>
+            <ul>
+              <li><a href="index.html">หน้าแรก</a></li>
+              <li><a href="index.html#extensions">ส่วนขยาย</a></li>
+              <li><a href="usage.html">วิธีใช้งาน</a></li>
+              <li><a href="faq.html">คำถามที่พบบ่อย</a></li>
+              <li><a href="privacy.html">นโยบายความเป็นส่วนตัว</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>ติดต่อ</h4>
+            <ul>
+              <li><a href="mailto:suksan.cmu@gmail.com">suksan.cmu@gmail.com</a></li>
+              <li><a href="index.html#extensions">ส่วนขยายทั้งหมด</a></li>
+              <li><a href="https://www.facebook.com/GCKApplication" target="_blank" rel="noopener noreferrer">Facebook Page</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">© <span data-year>2026</span> GCK Chrome Extension • สงวนลิขสิทธิ์</div>
+      </div>
+    </footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>

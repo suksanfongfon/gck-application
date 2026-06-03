@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instagram Toolkit — GCK Chrome Extension</title>
+    <meta name="description" content="Instagram Toolkit: follow/unfollow บน Instagram ตามเงื่อนไข — เฉพาะบัญชี verified, keyword ใน bio หรือผู้ติดตามขั้นต่ำ พร้อม Whitelist" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a href="index.html" class="logo">
+          <span class="logo-mark">G</span>
+          GCK Chrome Extension
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html">หน้าแรก</a></li>
+          <li><a href="index.html#extensions">ส่วนขยาย</a></li>
+          <li><a href="usage.html">วิธีใช้งาน</a></li>
+          <li><a href="faq.html">คำถามที่พบบ่อย</a></li>
+          <li><a href="privacy.html">ความเป็นส่วนตัว</a></li>
+          <li>
+            <a href="#install" class="btn btn-primary" style="padding: 8px 18px">🔔 แจ้งเตือนเมื่อพร้อม</a>
+          </li>
+        </ul>
+        <button class="nav-toggle" aria-label="เปิดเมนู">☰</button>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
+          <div class="ext-icon has-img" style="width:80px;height:80px;flex-shrink:0;box-shadow:var(--shadow-sm)">
+            <img src="images/instagram-toolkit.png" alt="Instagram Toolkit" />
+          </div>
+          <div>
+            <h1 style="margin-bottom:4px">Instagram Toolkit</h1>
+            <p><span class="status soon">เร็ว ๆ นี้</span> กำลังพัฒนา • สำหรับ instagram.com</p>
+          </div>
+        </div>
+        <p style="margin-top:18px;max-width:660px">
+          เครื่องมือจัดการ Instagram อัตโนมัติ — follow/unfollow ตามเงื่อนไขละเอียด เลือกเฉพาะบัญชี verified, มี keyword ใน bio หรือผู้ติดตามขั้นต่ำ เก็บกวาดคนที่ไม่ติดตามกลับ พร้อม Whitelist กันลบผิดคน
+        </p>
+        <div class="btn-row" style="margin-top:22px">
+          <a href="https://www.facebook.com/GCKApplication" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">🔔 แจ้งเตือนเมื่อพร้อม</a>
+          <a href="#screenshots" class="btn btn-ghost btn-lg">ดูตัวอย่าง</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section style="padding-top:56px">
+      <div class="container">
+        <div class="section-head">
+          <h2>ความสามารถ</h2>
+          <p>ออกแบบสำหรับครีเอเตอร์และแบรนด์ที่อยากโตบน Instagram อย่างมีกลยุทธ์</p>
+        </div>
+        <div class="features">
+          <div class="feature-card">
+            <div class="feature-icon">➕</div>
+            <h3>Follow ตามเงื่อนไข</h3>
+            <p>follow จากผู้ติดตามบัญชีอื่นหรือผลค้นหา ตามเกณฑ์ที่ตั้งไว้</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔎</div>
+            <h3>ตัวกรองละเอียด</h3>
+            <p>เลือกเฉพาะบัญชี verified, มี keyword ใน bio, ผู้ติดตามขั้นต่ำ หรือข้ามบัญชีส่วนตัว</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🧹</div>
+            <h3>Unfollow คนที่ไม่ตามกลับ</h3>
+            <p>เก็บกวาด Following ให้สะอาด เลือกเฉพาะ Non-mutual</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🛡️</div>
+            <h3>Whitelist กันลบผิดคน</h3>
+            <p>ใส่รายชื่อที่ห้าม unfollow ไม่ว่ากรณีใด ปลอดภัยกับคนสำคัญ</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⏱️</div>
+            <h3>หน่วงเวลาแบบสุ่ม</h3>
+            <p>สุ่มจังหวะ action เหมือนคนจริง ลดความเสี่ยงโดนระบบตรวจจับ</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>ลิมิตต่อชั่วโมง / ต่อวัน</h3>
+            <p>กำหนดเพดาน action พร้อมตัวนับเรียลไทม์ และหยุดอัตโนมัติเมื่อถึงลิมิต</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section id="screenshots" class="bg-soft">
+      <div class="container">
+        <div class="section-head">
+          <h2>ตัวอย่างหน้าตา (ออกแบบไว้)</h2>
+          <p>ภาพตัวอย่างดีไซน์ก่อนเปิดตัวจริง — หน้าตาจริงอาจปรับเปลี่ยนได้</p>
+        </div>
+        <div class="screenshot-gallery">
+          <img src="images/instagram-toolkit-ss-1.png" alt="Instagram Toolkit ตัวอย่างที่ 1" />
+          <img src="images/instagram-toolkit-ss-2.png" alt="Instagram Toolkit ตัวอย่างที่ 2" />
+          <img src="images/instagram-toolkit-ss-3.png" alt="Instagram Toolkit ตัวอย่างที่ 3" />
+          <img src="images/instagram-toolkit-ss-4.png" alt="Instagram Toolkit ตัวอย่างที่ 4" />
+          <img src="images/instagram-toolkit-ss-5.png" alt="Instagram Toolkit ตัวอย่างที่ 5" />
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <h2>วิธีใช้งาน (แผนการออกแบบ)</h2>
+          <p>เปิดหน้า Instagram แล้วกด Start ได้เลย</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">①</div>
+            <div>
+              <h3>เลือกโหมด Follow หรือ Unfollow</h3>
+              <p>เปิด popup เลือกแท็บ ตั้งกลุ่มเป้าหมาย</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">②</div>
+            <div>
+              <h3>ตั้งตัวกรองและ Whitelist</h3>
+              <p>เลือกเงื่อนไข verified / keyword / ผู้ติดตาม และใส่รายชื่อที่ห้ามแตะ</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">③</div>
+            <div>
+              <h3>กด Start</h3>
+              <p>ระบบ follow/unfollow เฉพาะบัญชีที่ตรงเงื่อนไขให้อัตโนมัติ</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">④</div>
+            <div>
+              <h3>คุมลิมิตในแท็บตั้งค่า</h3>
+              <p>ดูตัวนับ usage และปรับเพดานได้ทุกเมื่อ</p>
+            </div>
+          </div>
+        </div>
+        <div class="callout" style="max-width:780px;margin:32px auto 0">
+          💡 Instagram เข้มกับการใช้งานอัตโนมัติเป็นพิเศษ — ตั้งลิมิตต่ำมาก ๆ และหน่วงเวลานาน ๆ เพื่อความปลอดภัย
+        </div>
+      </div>
+    </section>
+
+    <!-- Install / coming soon CTA -->
+    <section id="install" class="bg-soft">
+      <div class="container">
+        <div class="service-band">
+          <div>
+            <span class="price-tag">🔔 กำลังพัฒนา</span>
+            <h2>Instagram Toolkit กำลังจะมา เร็ว ๆ นี้</h2>
+            <p>
+              ส่วนขยายนี้อยู่ระหว่างพัฒนา กดติดตาม Facebook Page ของ GCK
+              เพื่อรับแจ้งเตือนทันทีที่เปิดให้ติดตั้งบน Chrome Web Store
+            </p>
+          </div>
+          <div class="service-band-actions">
+            <a href="https://www.facebook.com/GCKApplication" target="_blank" rel="noopener noreferrer" class="btn btn-facebook btn-lg">
+              💬 ติดตามเพื่อรับแจ้งเตือน
+            </a>
+            <a href="mailto:suksan.cmu@gmail.com" class="btn btn-ghost btn-lg"
+              style="border-color:rgba(255,255,255,0.3);color:#fff">
+              ✉️ อีเมล
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Permissions -->
+    <article class="prose">
+      <h2>สิทธิ์การเข้าถึงที่วางแผนจะใช้</h2>
+      <ul>
+        <li><code>storage</code> — บันทึกการตั้งค่า Whitelist และตัวนับลิมิตในเครื่อง</li>
+        <li><code>tabs, scripting</code> — ตรวจสอบแท็บ Instagram ที่เปิดอยู่และสั่งงานบนหน้าเว็บ</li>
+        <li><code>host: www.instagram.com</code> — อ่านและคลิกองค์ประกอบที่ปรากฏบนหน้าจอเหมือนผู้ใช้ทั่วไป</li>
+      </ul>
+      <div class="callout">
+        🔒 ส่วนขยายของ GCK ยึดหลัก <strong>ไม่ส่งข้อมูลออกนอกเครื่อง</strong>
+        การตั้งค่าทั้งหมดเก็บใน <code>chrome.storage.local</code> และลบออกได้ตลอดเวลา
+        อ่านนโยบายฉบับเต็มได้ที่ <a href="privacy.html">หน้านโยบายความเป็นส่วนตัว</a>
+      </div>
+      <div class="callout" style="margin-top:16px">
+        ⚠️ Instagram มีระบบตรวจจับการใช้งานอัตโนมัติที่เข้มงวด — โปรดใช้ด้วยความระมัดระวังอย่างยิ่ง การใช้เครื่องมืออัตโนมัติเป็นความรับผิดชอบของผู้ใช้เอง
+      </div>
+      <p style="margin-top:32px;color:var(--text-muted);font-size:0.9rem">
+        ส่วนขยายนี้เป็นเครื่องมือของบุคคลที่สาม ไม่ได้เกี่ยวข้องหรือได้รับการรับรองจาก Instagram / Meta
+      </p>
+      <p style="margin-top:16px"><a href="index.html#extensions">← กลับไปดูส่วนขยายทั้งหมด</a></p>
+    </article>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="logo"><span class="logo-mark">G</span> GCK Chrome Extension</div>
+            <p>ศูนย์รวมส่วนขยาย Chrome ภาษาไทยจาก GCK ที่ช่วยให้การทำงานบนเว็บของคุณง่ายและรวดเร็วยิ่งขึ้น</p>
+          </div>
+          <div class="footer-col">
+            <h4>เมนู</h4>
+            <ul>
+              <li><a href="index.html">หน้าแรก</a></li>
+              <li><a href="index.html#extensions">ส่วนขยาย</a></li>
+              <li><a href="usage.html">วิธีใช้งาน</a></li>
+              <li><a href="faq.html">คำถามที่พบบ่อย</a></li>
+              <li><a href="privacy.html">นโยบายความเป็นส่วนตัว</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>ติดต่อ</h4>
+            <ul>
+              <li><a href="mailto:suksan.cmu@gmail.com">suksan.cmu@gmail.com</a></li>
+              <li><a href="index.html#extensions">ส่วนขยายทั้งหมด</a></li>
+              <li><a href="https://www.facebook.com/GCKApplication" target="_blank" rel="noopener noreferrer">Facebook Page</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">© <span data-year>2026</span> GCK Chrome Extension • สงวนลิขสิทธิ์</div>
+      </div>
+    </footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>

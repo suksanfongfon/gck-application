@@ -55,7 +55,9 @@
         นโยบายความเป็นส่วนตัวฉบับนี้ครอบคลุมส่วนขยาย Chrome
         <strong>ทุกตัว</strong>ที่พัฒนาและเผยแพร่ภายใต้ชื่อ
         <strong>GCK Chrome Extension</strong> ได้แก่
-        <strong>X Toolkit</strong>, <strong>Lazada Product Finder</strong>
+        <strong>X Toolkit</strong>, <strong>Lazada Product Finder</strong>,
+        <strong>Shopee Product Finder</strong>, <strong>TikTok Toolkit</strong>,
+        <strong>Twitter Video Grabber</strong>
         และส่วนขยายอื่น ๆ ที่จะเพิ่มในอนาคต (เรียกรวมว่า "ส่วนขยาย")
       </p>
 
@@ -191,6 +193,112 @@
         </table>
       </div>
 
+      <h3 style="margin-top:28px">🛍️ Shopee Product Finder</h3>
+      <div style="overflow-x:auto">
+        <table style="width:100%;border-collapse:collapse;font-size:0.95rem">
+          <thead>
+            <tr style="background:var(--bg-soft)">
+              <th style="padding:10px 14px;text-align:right;border:1px solid var(--border);font-weight:600">สิทธิ์</th>
+              <th style="padding:10px 14px;text-align:right;border:1px solid var(--border);font-weight:600">เหตุผลที่ใช้</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding:10px 14px;border:1px solid var(--border)"><code>storage</code></td>
+              <td style="padding:10px 14px;border:1px solid var(--border)">บันทึกการตั้งค่า (เงื่อนไขกรอง คอลัมน์ export) และประวัติการติดตามราคา/ยอดขายในเครื่องผู้ใช้</td>
+            </tr>
+            <tr style="background:var(--bg-soft)">
+              <td style="padding:10px 14px;border:1px solid var(--border)"><code>tabs</code></td>
+              <td style="padding:10px 14px;border:1px solid var(--border)">เปิดหน้าค้นหา Shopee อัตโนมัติเพื่อดึงผลลัพธ์ตาม keyword ที่ผู้ใช้กรอก</td>
+            </tr>
+            <tr>
+              <td style="padding:10px 14px;border:1px solid var(--border)"><code>scripting</code></td>
+              <td style="padding:10px 14px;border:1px solid var(--border)">inject content script ในหน้า Shopee เพื่อดึงข้อมูลสินค้า</td>
+            </tr>
+            <tr style="background:var(--bg-soft)">
+              <td style="padding:10px 14px;border:1px solid var(--border)"><code>clipboardWrite</code></td>
+              <td style="padding:10px 14px;border:1px solid var(--border)">คัดลอกผลลัพธ์เป็น TSV เมื่อผู้ใช้กดปุ่ม "คัดลอก" เท่านั้น</td>
+            </tr>
+            <tr>
+              <td style="padding:10px 14px;border:1px solid var(--border)"><code>downloads</code></td>
+              <td style="padding:10px 14px;border:1px solid var(--border)">บันทึกไฟล์ CSV เมื่อผู้ใช้กดปุ่ม "ดาวน์โหลด CSV" เท่านั้น</td>
+            </tr>
+            <tr style="background:var(--bg-soft)">
+              <td style="padding:10px 14px;border:1px solid var(--border)"><code>shopee.co.th</code></td>
+              <td style="padding:10px 14px;border:1px solid var(--border)">ค้นหาและดึงข้อมูลสินค้าสาธารณะจาก Shopee Thailand ตาม keyword ของผู้ใช้</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:28px">🎵 TikTok Toolkit</h3>
+      <div style="overflow-x:auto">
+        <table style="width:100%;border-collapse:collapse;font-size:0.95rem">
+          <thead>
+            <tr style="background:var(--bg-soft)">
+              <th style="padding:10px 14px;text-align:right;border:1px solid var(--border);font-weight:600">สิทธิ์</th>
+              <th style="padding:10px 14px;text-align:right;border:1px solid var(--border);font-weight:600">เหตุผลที่ใช้</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding:10px 14px;border:1px solid var(--border)"><code>storage</code></td>
+              <td style="padding:10px 14px;border:1px solid var(--border)">บันทึกการตั้งค่า, Whitelist และตัวนับลิมิต (รายชั่วโมง/รายวัน) ในเครื่องผู้ใช้</td>
+            </tr>
+            <tr style="background:var(--bg-soft)">
+              <td style="padding:10px 14px;border:1px solid var(--border)"><code>tabs</code></td>
+              <td style="padding:10px 14px;border:1px solid var(--border)">ตรวจสอบแท็บ TikTok ที่ผู้ใช้เปิดอยู่เพื่อทำงานบนหน้าที่ถูกต้อง</td>
+            </tr>
+            <tr>
+              <td style="padding:10px 14px;border:1px solid var(--border)"><code>scripting</code></td>
+              <td style="padding:10px 14px;border:1px solid var(--border)">inject content script ในหน้า TikTok เพื่อคลิก follow/unfollow/like ตามคำสั่งผู้ใช้</td>
+            </tr>
+            <tr style="background:var(--bg-soft)">
+              <td style="padding:10px 14px;border:1px solid var(--border)"><code>www.tiktok.com</code></td>
+              <td style="padding:10px 14px;border:1px solid var(--border)">เรียกใช้ฟังก์ชัน follow/unfollow/like บนหน้า TikTok ที่ผู้ใช้เปิด</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:28px">🎬 Twitter Video Grabber</h3>
+      <div style="overflow-x:auto">
+        <table style="width:100%;border-collapse:collapse;font-size:0.95rem">
+          <thead>
+            <tr style="background:var(--bg-soft)">
+              <th style="padding:10px 14px;text-align:right;border:1px solid var(--border);font-weight:600">สิทธิ์</th>
+              <th style="padding:10px 14px;text-align:right;border:1px solid var(--border);font-weight:600">เหตุผลที่ใช้</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding:10px 14px;border:1px solid var(--border)"><code>webRequest</code></td>
+              <td style="padding:10px 14px;border:1px solid var(--border)">ตรวจจับลิงก์วิดีโอที่หน้าเว็บโหลดจาก video.twimg.com เพื่อให้ผู้ใช้ดาวน์โหลดได้</td>
+            </tr>
+            <tr style="background:var(--bg-soft)">
+              <td style="padding:10px 14px;border:1px solid var(--border)"><code>declarativeNetRequest</code></td>
+              <td style="padding:10px 14px;border:1px solid var(--border)">ปรับ header ของ request ให้ดาวน์โหลดไฟล์วิดีโอได้ถูกต้อง</td>
+            </tr>
+            <tr>
+              <td style="padding:10px 14px;border:1px solid var(--border)"><code>downloads</code></td>
+              <td style="padding:10px 14px;border:1px solid var(--border)">บันทึกไฟล์วิดีโอเมื่อผู้ใช้กดปุ่ม "ดาวน์โหลด" เท่านั้น</td>
+            </tr>
+            <tr style="background:var(--bg-soft)">
+              <td style="padding:10px 14px;border:1px solid var(--border)"><code>storage</code></td>
+              <td style="padding:10px 14px;border:1px solid var(--border)">เก็บรายการวิดีโอที่เจอแยกตามแท็บในเครื่องผู้ใช้</td>
+            </tr>
+            <tr>
+              <td style="padding:10px 14px;border:1px solid var(--border)"><code>tabs</code></td>
+              <td style="padding:10px 14px;border:1px solid var(--border)">ระบุว่าวิดีโอที่เจออยู่ในแท็บใด เพื่อแสดง badge และจัดรายการให้ถูกต้อง</td>
+            </tr>
+            <tr style="background:var(--bg-soft)">
+              <td style="padding:10px 14px;border:1px solid var(--border)"><code>twitter.com / x.com / video.twimg.com</code></td>
+              <td style="padding:10px 14px;border:1px solid var(--border)">ดักจับและดาวน์โหลดวิดีโอจากทวีตที่ผู้ใช้เปิด</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
       <!-- 4 -->
       <h2>4. Remote Code</h2>
       <p>
@@ -218,6 +326,18 @@
         <li>
           <strong>Lazada Product Finder:</strong> เปิดหน้า lazada.co.th
           ตาม keyword ที่ผู้ใช้กรอก เพื่อดึงข้อมูลสินค้าที่เป็นสาธารณะ
+        </li>
+        <li>
+          <strong>Shopee Product Finder:</strong> เปิดหน้า shopee.co.th
+          ตาม keyword ที่ผู้ใช้กรอก เพื่อดึงข้อมูลสินค้าที่เป็นสาธารณะ
+        </li>
+        <li>
+          <strong>TikTok Toolkit:</strong> ทำงานบนหน้า tiktok.com ที่ผู้ใช้เปิดอยู่
+          (follow/unfollow/like) ตามปกติของแพลตฟอร์มเมื่อผู้ใช้กด Start
+        </li>
+        <li>
+          <strong>Twitter Video Grabber:</strong> ดาวน์โหลดไฟล์วิดีโอจาก
+          video.twimg.com เฉพาะเมื่อผู้ใช้กดปุ่มดาวน์โหลดเอง
         </li>
       </ul>
       <p>

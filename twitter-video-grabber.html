@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Twitter Video Grabber — GCK Chrome Extension</title>
+    <meta name="description" content="Twitter Video Grabber: ดาวน์โหลดวิดีโอจาก Twitter/X — วาง URL ทวีตหรือเปิดทวีตที่มีวิดีโอ เลือกความละเอียด แล้วดาวน์โหลด MP4 ได้ในคลิกเดียว พร้อม export CSV" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a href="index.html" class="logo">
+          <span class="logo-mark">G</span>
+          GCK Chrome Extension
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html">หน้าแรก</a></li>
+          <li><a href="index.html#extensions">ส่วนขยาย</a></li>
+          <li><a href="usage.html">วิธีใช้งาน</a></li>
+          <li><a href="faq.html">คำถามที่พบบ่อย</a></li>
+          <li><a href="privacy.html">ความเป็นส่วนตัว</a></li>
+          <li>
+            <a href="#" class="btn btn-primary" style="padding: 8px 18px">＋ เพิ่มลงใน Chrome</a>
+          </li>
+        </ul>
+        <button class="nav-toggle" aria-label="เปิดเมนู">☰</button>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
+          <div class="ext-icon has-img" style="width:80px;height:80px;flex-shrink:0;box-shadow:var(--shadow-sm)">
+            <img src="images/twitter-video-grabber.png" alt="Twitter Video Grabber" />
+          </div>
+          <div>
+            <h1 style="margin-bottom:4px">Twitter Video Grabber</h1>
+            <p><span class="status ready">พร้อมใช้งาน</span> เวอร์ชัน 4.0.0 • สำหรับ Twitter / X</p>
+          </div>
+        </div>
+        <p style="margin-top:18px;max-width:660px">
+          ดาวน์โหลดวิดีโอจาก Twitter / X ได้ในคลิกเดียว — เปิดทวีตที่มีวิดีโอแล้วกดเล่น
+          หรือวาง URL ทวีตตรง ๆ ส่วนขยายจะดักจับลิงก์วิดีโอให้อัตโนมัติ
+          เลือกความละเอียดที่ต้องการ ดาวน์โหลดเป็น MP4 และ export รายการเป็น CSV ได้
+        </p>
+        <div class="btn-row" style="margin-top:22px">
+          <a href="#" class="btn btn-primary btn-lg">＋ เพิ่มลงใน Chrome</a>
+          <a href="#screenshots" class="btn btn-ghost btn-lg">ดูตัวอย่าง</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section style="padding-top:56px">
+      <div class="container">
+        <div class="section-head">
+          <h2>ความสามารถ</h2>
+          <p>เครื่องมือเซฟวิดีโอ Twitter/X ที่เร็ว ง่าย และทำงานในเครื่องคุณล้วน ๆ</p>
+        </div>
+        <div class="features">
+          <div class="feature-card">
+            <div class="feature-icon">🎬</div>
+            <h3>ดักจับวิดีโออัตโนมัติ</h3>
+            <p>ส่วนขยายฟัง network request ของ <code>video.twimg.com</code> แล้วเก็บลิงก์วิดีโอที่เจอให้อัตโนมัติ แยกตามแท็บ</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔗</div>
+            <h3>วาง URL ทวีตได้ตรง ๆ</h3>
+            <p>ไม่ต้องเปิดเล่นวิดีโอก็ได้ — วางลิงก์ทวีต (twitter.com หรือ x.com) แล้วกดค้นหาเพื่อดึงวิดีโอออกมา</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🎚️</div>
+            <h3>เลือกความละเอียด</h3>
+            <p>แต่ละวิดีโอมักมีหลายขนาด (320p / 360p / 720p) เลือกตัวที่คมที่สุดได้ตามต้องการ</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⬇️</div>
+            <h3>ดาวน์โหลด MP4 ปุ่มเดียว</h3>
+            <p>ไฟล์ <code>.mp4</code> ดาวน์โหลดตรงได้ทันที ส่วน HLS <code>.m3u8</code> คัดลอกลิงก์ไปใช้กับ <code>ffmpeg</code> ได้</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔢</div>
+            <h3>Badge นับจำนวน</h3>
+            <p>ตัวเลขบนไอคอนบอกจำนวนวิดีโอที่เจอในแท็บปัจจุบัน รู้ทันทีว่ามีอะไรให้เซฟบ้าง</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📋</div>
+            <h3>Export เป็น CSV</h3>
+            <p>รวมทุกลิงก์ที่เจอในแท็บ (ชนิด, ความละเอียด, ลิงก์วิดีโอ, ลิงก์ทวีต, เวลา) เป็นไฟล์ CSV เปิดใน Excel/Sheets ได้</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section id="screenshots" class="bg-soft">
+      <div class="container">
+        <div class="section-head">
+          <h2>ตัวอย่างการใช้งาน</h2>
+          <p>ดูหน้าตาจริงก่อนติดตั้ง</p>
+        </div>
+        <div class="screenshot-gallery">
+          <img src="images/twitter-video-grabber-ss-1.png" alt="ดาวน์โหลดวิดีโอจาก Twitter / X" />
+          <img src="images/twitter-video-grabber-ss-2.png" alt="วาง URL ค้นหาทันที" />
+          <img src="images/twitter-video-grabber-ss-3.png" alt="เลือกความละเอียดที่คมที่สุด" />
+          <img src="images/twitter-video-grabber-ss-4.png" alt="Export รายการเป็น CSV" />
+          <img src="images/twitter-video-grabber-ss-5.png" alt="ส่วนตัวและปลอดภัย" />
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <h2>วิธีใช้งาน</h2>
+          <p>เปิดทวีตที่มีวิดีโอ หรือวางลิงก์ตรง ๆ ก็ได้</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">①</div>
+            <div>
+              <h3>เปิดทวีตแล้วกดเล่นวิดีโอ</h3>
+              <p>เปิดทวีตที่มีวิดีโอ กดเล่นสัก 1–2 วินาที เพื่อให้เบราว์เซอร์เริ่มโหลดวิดีโอ ตัวเลขสีฟ้าบนไอคอนจะบอกจำนวนวิดีโอที่เจอ</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">②</div>
+            <div>
+              <h3>เลือกความละเอียดและดาวน์โหลด</h3>
+              <p>คลิกไอคอนเพื่อเปิด popup เลือกความละเอียดที่ต้องการ (เลือกตัวใหญ่สุดถ้าต้องการคุณภาพดีที่สุด) แล้วกด <strong>ดาวน์โหลด</strong></p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">③</div>
+            <div>
+              <h3>หรือวาง URL ทวีต / Export CSV</h3>
+              <p>ไม่อยากเปิดเล่นก็วาง URL ทวเตในช่องค้นหาได้เลย และถ้าต้องการลิสต์ทั้งหมด กด <strong>Export CSV</strong> เพื่อบันทึกทุกลิงก์ในแท็บ</p>
+            </div>
+          </div>
+        </div>
+        <div class="callout" style="max-width:780px;margin:32px auto 0">
+          💡 วิดีโอแบบ HLS (<code>.m3u8</code>) ถูกหั่นเป็นหลายชิ้น ดาวน์โหลดไฟล์เดียวไม่ได้วิดีโอเต็ม — ให้คัดลอกลิงก์ไปรวมด้วย
+          <code>ffmpeg -i "ลิงก์ m3u8" -c copy output.mp4</code>
+        </div>
+      </div>
+    </section>
+
+    <!-- Install -->
+    <section id="install" class="bg-soft">
+      <div class="container">
+        <div class="section-head">
+          <h2>วิธีติดตั้ง</h2>
+          <p>ติดตั้งผ่าน Chrome Web Store ได้ในไม่กี่คลิก</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div>
+              <h3>กด "เพิ่มลงใน Chrome"</h3>
+              <p>คลิกปุ่ม <strong>เพิ่มลงใน Chrome</strong> บนหน้านี้ หรือค้นหา "Twitter Video Grabber" ใน Chrome Web Store โดยตรง</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div>
+              <h3>ยืนยันการติดตั้ง</h3>
+              <p>กด <strong>เพิ่มส่วนขยาย</strong> ในหน้าต่างยืนยัน Chrome จะติดตั้งให้อัตโนมัติภายในไม่กี่วินาที</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div>
+              <h3>ปักหมุดไอคอน</h3>
+              <p>คลิกไอคอนต่อจิ๊กซอว์ 🧩 มุมขวาบน แล้วกดหมุด 📌 ข้างชื่อ Twitter Video Grabber</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div>
+              <h3>เปิดทวีตที่มีวิดีโอ</h3>
+              <p>ไปยังทวีตที่มีวิดีโอบน Twitter / X กดเล่น แล้วคลิกไอคอนเพื่อเลือกและดาวน์โหลด</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Permissions -->
+    <article class="prose">
+      <h2>สิทธิ์การเข้าถึงที่ใช้</h2>
+      <ul>
+        <li><code>webRequest</code>, <code>declarativeNetRequest</code> — ดักจับลิงก์วิดีโอที่หน้าเว็บโหลดจาก <code>video.twimg.com</code></li>
+        <li><code>downloads</code> — ดาวน์โหลดไฟล์วิดีโอเมื่อผู้ใช้กดปุ่ม</li>
+        <li><code>storage</code> — เก็บรายการวิดีโอที่เจอแยกตามแท็บ</li>
+        <li><code>tabs</code> — รู้ว่าวิดีโอที่เจออยู่ในแท็บไหน เพื่อแสดง badge และจัดรายการให้ถูกต้อง</li>
+        <li>เข้าถึงเฉพาะโดเมน <code>twitter.com</code>, <code>x.com</code>, <code>video.twimg.com</code>, <code>api.twitter.com</code></li>
+      </ul>
+      <div class="callout">
+        🔒 ส่วนขยายนี้ <strong>ทำงานในเครื่องของคุณล้วน ๆ ไม่ส่งข้อมูลออกนอกเครื่อง</strong>
+        ลิงก์วิดีโอที่เก็บอยู่ใน <code>chrome.storage</code> และล้างได้ตลอดเวลา
+        อ่านนโยบายฉบับเต็มได้ที่ <a href="privacy.html">หน้านโยบายความเป็นส่วนตัว</a>
+      </div>
+      <p style="margin-top:32px;color:var(--text-muted);font-size:0.9rem">
+        โปรดใช้เพื่อการส่วนตัวเท่านั้น และเคารพลิขสิทธิ์ของเจ้าของเนื้อหาและข้อกำหนดของแพลตฟอร์ม
+        ส่วนขยายนี้เป็นเครื่องมือของบุคคลที่สาม ไม่ได้เกี่ยวข้องหรือได้รับการรับรองจาก Twitter / X
+      </p>
+      <p style="margin-top:16px"><a href="index.html#extensions">← กลับไปดูส่วนขยายทั้งหมด</a></p>
+    </article>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="logo"><span class="logo-mark">G</span> GCK Chrome Extension</div>
+            <p>ศูนย์รวมส่วนขยาย Chrome ภาษาไทยจาก GCK ที่ช่วยให้การทำงานบนเว็บของคุณง่ายและรวดเร็วยิ่งขึ้น</p>
+          </div>
+          <div class="footer-col">
+            <h4>เมนู</h4>
+            <ul>
+              <li><a href="index.html">หน้าแรก</a></li>
+              <li><a href="index.html#extensions">ส่วนขยาย</a></li>
+              <li><a href="usage.html">วิธีใช้งาน</a></li>
+              <li><a href="faq.html">คำถามที่พบบ่อย</a></li>
+              <li><a href="privacy.html">นโยบายความเป็นส่วนตัว</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>ติดต่อ</h4>
+            <ul>
+              <li><a href="mailto:suksan.cmu@gmail.com">suksan.cmu@gmail.com</a></li>
+              <li><a href="index.html#extensions">ส่วนขยายทั้งหมด</a></li>
+              <li><a href="https://www.facebook.com/GCKApplication" target="_blank" rel="noopener noreferrer">Facebook Page</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">© <span data-year>2026</span> GCK Chrome Extension • สงวนลิขสิทธิ์</div>
+      </div>
+    </footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>

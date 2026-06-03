@@ -77,6 +77,9 @@
 │   ├── index.html                  หน้าแรก — hub ส่วนขยายทั้งหมด
 │   ├── x-toolkit.html              หน้ารายละเอียด X Toolkit
 │   ├── lazada-product-finder.html  หน้ารายละเอียด Lazada Product Finder
+│   ├── shopee-product-finder.html  หน้ารายละเอียด Shopee Product Finder
+│   ├── tiktok-toolkit.html         หน้ารายละเอียด TikTok Toolkit
+│   ├── twitter-video-grabber.html  หน้ารายละเอียด Twitter Video Grabber
 │   ├── usage.html                  วิธีใช้งาน
 │   ├── faq.html                    คำถามที่พบบ่อย
 │   ├── privacy.html                นโยบายความเป็นส่วนตัว (ครบทุก extension)
@@ -87,21 +90,26 @@
 │
 ├── chrom extendion 2/            ← X Toolkit extension source
 ├── Lazada/                       ← Lazada Product Finder extension source
-└── Shopee Product Finder/        ← Shopee Product Finder extension source
+├── Shopee Product Finder/        ← Shopee Product Finder extension source
+├── TikTok Toolkit/               ← TikTok Toolkit extension source
+└── Chrome extension/             ← Twitter Video Grabber extension source
 ```
 
 ---
 
 ## Extensions ที่มีอยู่
 
-| ชื่อ | Version | สถานะ | โฟลเดอร์ |
-|------|---------|--------|----------|
-| X Toolkit | 1.1.0 | พร้อมใช้งาน | `chrom extendion 2/` |
-| Lazada Product Finder | 2.0.0 | พร้อมใช้งาน | `Lazada/` |
-| Shopee Product Finder | 1.0.0 | กำลังพัฒนา | `Shopee Product Finder/` |
+| ชื่อ | Version | สถานะ | โฟลเดอร์ | หน้าเว็บ |
+|------|---------|--------|----------|----------|
+| X Toolkit | 1.1.0 | พร้อมใช้งาน | `chrom extendion 2/` | `x-toolkit.html` |
+| Lazada Product Finder | 2.0.0 | พร้อมใช้งาน | `Lazada/` | `lazada-product-finder.html` |
+| Shopee Product Finder | 1.0.0 | พร้อมใช้งาน | `Shopee Product Finder/` | `shopee-product-finder.html` |
+| TikTok Toolkit | 1.0.0 | พร้อมใช้งาน | `TikTok Toolkit/` | `tiktok-toolkit.html` |
+| Twitter Video Grabber | 4.0.0 | พร้อมใช้งาน | `Chrome extension/` | `twitter-video-grabber.html` |
+
+> หมายเหตุ: "พร้อมใช้งาน" = มีการ์ด + หน้ารายละเอียดในเว็บแล้ว — ปุ่ม "เพิ่มลงใน Chrome" ยัง `href="#"` รอลิงก์ Chrome Web Store จริง
 
 ### Extension ที่อยู่ใน Roadmap (ยังไม่ได้สร้าง)
-- TikTok Toolkit
 - Price Compare (Lazada + Shopee + JD Central)
 - Facebook Toolkit
 - YouTube Toolkit
